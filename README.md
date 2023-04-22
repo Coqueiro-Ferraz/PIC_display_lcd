@@ -1,5 +1,5 @@
 # PIC_display_lcd
-Esta é uma biblioteca de LCD para PIC para uso em atividades didáticas voltadas para educação, para compreender o uso do display LCD alfanumérico,
+Esta é uma biblioteca de LCD para PIC, criada para o XC8 - MPLABX para uso em atividades didáticas voltadas para educação, para compreender o uso do display LCD alfanumérico,
 testada no PIC16F887, para controle via 4 bits.
 Este código e seu exemplo de aplicação não devem ser usados para fins comerciais e seu funcionamento não é garantido ou livre de defeitos. Use-os com responsabilidade.  
 
