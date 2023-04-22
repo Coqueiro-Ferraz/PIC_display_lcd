@@ -32,7 +32,7 @@ idataBANK0 CODE 0 520 520 14 2 1
 strings STRING 0 3 3 F 2 1
 dataBANK0 BANK0 1 20 20 14 1 1
 config CONFIG 4 2007 2007 2 2 1
-$C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_12.o
+$C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_12.o
 idloc IDLOC 5 2000 2000 4 2 1
 end_init CODE 0 0 0 3 2 1
 config CONFIG 4 2007 2007 2 2 1
@@ -79,33 +79,33 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\lcdtest.X.production.o
-7E2 cinit CODE >680:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7E2 cinit CODE >683:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7E2 cinit CODE >751:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7E3 cinit CODE >752:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7E4 cinit CODE >753:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7E5 cinit CODE >754:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7E6 cinit CODE >755:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7E7 cinit CODE >756:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7E8 cinit CODE >757:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7E9 cinit CODE >758:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7EA cinit CODE >759:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7EB cinit CODE >760:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7F0 cinit CODE >764:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7F1 cinit CODE >765:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7F2 cinit CODE >766:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7F3 cinit CODE >767:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7F4 cinit CODE >768:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7F5 cinit CODE >769:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7F6 cinit CODE >770:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7F7 cinit CODE >771:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7F8 cinit CODE >772:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7F9 cinit CODE >773:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7FA cinit CODE >774:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7FB cinit CODE >775:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7FC cinit CODE >781:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7FC cinit CODE >783:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-7FD cinit CODE >784:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
+7E2 cinit CODE >680:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7E2 cinit CODE >683:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7E2 cinit CODE >751:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7E3 cinit CODE >752:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7E4 cinit CODE >753:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7E5 cinit CODE >754:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7E6 cinit CODE >755:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7E7 cinit CODE >756:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7E8 cinit CODE >757:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7E9 cinit CODE >758:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7EA cinit CODE >759:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7EB cinit CODE >760:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7F0 cinit CODE >764:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7F1 cinit CODE >765:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7F2 cinit CODE >766:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7F3 cinit CODE >767:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7F4 cinit CODE >768:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7F5 cinit CODE >769:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7F6 cinit CODE >770:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7F7 cinit CODE >771:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7F8 cinit CODE >772:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7F9 cinit CODE >773:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7FA cinit CODE >774:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7FB cinit CODE >775:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7FC cinit CODE >781:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7FC cinit CODE >783:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+7FD cinit CODE >784:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
 534 text8 CODE >7:C:\Users\Henrique\Desktop\projetos_aulas\PIC_display_lcd\lcdtest.X\bibliotec_lcd.c
 534 text8 CODE >9:C:\Users\Henrique\Desktop\projetos_aulas\PIC_display_lcd\lcdtest.X\bibliotec_lcd.c
 53A text8 CODE >11:C:\Users\Henrique\Desktop\projetos_aulas\PIC_display_lcd\lcdtest.X\bibliotec_lcd.c
@@ -189,23 +189,23 @@ $dist/default/production\lcdtest.X.production.o
 62D maintext CODE >48:C:\Users\Henrique\Desktop\projetos_aulas\PIC_display_lcd\lcdtest.X\lcdtest.c
 639 maintext CODE >49:C:\Users\Henrique\Desktop\projetos_aulas\PIC_display_lcd\lcdtest.X\lcdtest.c
 639 maintext CODE >52:C:\Users\Henrique\Desktop\projetos_aulas\PIC_display_lcd\lcdtest.X\lcdtest.c
-50D inittext CODE >725:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-50D inittext CODE >726:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-50E inittext CODE >727:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-50F inittext CODE >728:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-510 inittext CODE >729:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-511 inittext CODE >736:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-511 inittext CODE >737:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-516 inittext CODE >738:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-517 inittext CODE >739:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-518 inittext CODE >740:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-519 inittext CODE >741:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-51A inittext CODE >742:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-51B inittext CODE >743:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-51C inittext CODE >744:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-51D inittext CODE >745:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-51E inittext CODE >746:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
-51F inittext CODE >747:C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_1.s
+50D inittext CODE >725:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+50D inittext CODE >726:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+50E inittext CODE >727:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+50F inittext CODE >728:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+510 inittext CODE >729:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+511 inittext CODE >736:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+511 inittext CODE >737:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+516 inittext CODE >738:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+517 inittext CODE >739:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+518 inittext CODE >740:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+519 inittext CODE >741:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+51A inittext CODE >742:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+51B inittext CODE >743:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+51C inittext CODE >744:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+51D inittext CODE >745:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+51E inittext CODE >746:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
+51F inittext CODE >747:C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_1.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -236,24 +236,24 @@ _EN 3C 0 BANK0 1 bssBANK0 dist/default/production\lcdtest.X.production.o
 _RS 3E 0 BANK0 1 bssBANK0 dist/default/production\lcdtest.X.production.o
 __L__absolute__ 0 0 ABS 0 __absolute__ -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_12.o
+___sp 0 0 STACK 2 stack C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_12.o
 _byte C7A 0 CODE 0 text5 dist/default/production\lcdtest.X.production.o
 _main BF4 0 CODE 0 maintext dist/default/production\lcdtest.X.production.o
 _robo 2C 0 BANK0 1 dataBANK0 dist/default/production\lcdtest.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\lcdtest.X.production.o
-start 0 0 CODE 0 init C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_12.o
+start 0 0 CODE 0 init C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_12.o
 escreve@col 43 0 BANK0 1 cstackBANK0 dist/default/production\lcdtest.X.production.o
 escreve@lin 45 0 BANK0 1 cstackBANK0 dist/default/production\lcdtest.X.production.o
 escreve@str 44 0 BANK0 1 cstackBANK0 dist/default/production\lcdtest.X.production.o
 _usa_caractere AC2 0 CODE 0 text1 dist/default/production\lcdtest.X.production.o
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_12.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_12.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_12.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_12.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_12.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_12.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_12.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_12.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_12.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_12.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_12.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_12.o
 wtemp0 7E 0 ABS 0 - dist/default/production\lcdtest.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
@@ -261,15 +261,15 @@ __Lmaintext 0 0 ABS 0 maintext -
 __end_of_escreve D90 0 CODE 0 text4 dist/default/production\lcdtest.X.production.o
 __LnvBANK0 0 0 ABS 0 nvBANK0 -
 muda_pin@_port 70 0 COMMON 1 cstackCOMMON dist/default/production\lcdtest.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_12.o
-___stacklo 0 0 ABS 0 - C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_12.o
+___stackhi 0 0 ABS 0 - C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_12.o
+___stacklo 0 0 ABS 0 - C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_12.o
 __end_of_enable B86 0 CODE 0 text7 dist/default/production\lcdtest.X.production.o
 start_initialization FC4 0 CODE 0 cinit dist/default/production\lcdtest.X.production.o
 nibble@dado 77 0 COMMON 1 cstackCOMMON dist/default/production\lcdtest.X.production.o
 __end_of_nibble E76 0 CODE 0 text6 dist/default/production\lcdtest.X.production.o
 __pcstackBANK0 40 0 BANK0 1 cstackBANK0 dist/default/production\lcdtest.X.production.o
 __end_of_usa_caractere B1C 0 CODE 0 text1 dist/default/production\lcdtest.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_12.o
+___int_sp 0 0 STACK 2 stack C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_12.o
 muda_pin@_pin 72 0 COMMON 1 cstackCOMMON dist/default/production\lcdtest.X.production.o
 muda_pin@_val 74 0 COMMON 1 cstackCOMMON dist/default/production\lcdtest.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
@@ -323,7 +323,7 @@ _lcd_pins 20 0 BANK0 1 dataBANK0 dist/default/production\lcdtest.X.production.o
 __HnvBANK0 0 0 ABS 0 nvBANK0 -
 __Lintentry 0 0 CODE 0 intentry -
 __stringtab 6 0 STRING 0 strings dist/default/production\lcdtest.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Henrique\AppData\Local\Temp\xcAsak4.\driver_tmp_12.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Henrique\AppData\Local\Temp\xcAs918.\driver_tmp_12.o
 __pdataBANK0 20 0 BANK0 1 dataBANK0 dist/default/production\lcdtest.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __end_of_lcd_init FC4 0 CODE 0 text2 dist/default/production\lcdtest.X.production.o

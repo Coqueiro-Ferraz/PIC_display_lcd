@@ -45,7 +45,7 @@ void main()
     
     
     usa_caractere(1,2,0);
-    usa_caractere(1,4,'5');
+    usa_caractere(1,4,'X');
     while(1)
     {
   //byte(1,0x00);
