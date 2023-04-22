@@ -1,0 +1,128 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"7 C:\Users\Henrique\Desktop\projetos_aulas\PIC_display_lcd\lcdtest.X\bibliotec_lcd.c
+[v _muda_pin muda_pin `(v  1 e 1 0 ]
+"20
+[v _enable enable `(v  1 e 1 0 ]
+"28
+[v _nibble nibble `(v  1 e 1 0 ]
+"37
+[v _byte byte `(v  1 e 1 0 ]
+"47
+[v _lcd_init lcd_init `(v  1 e 1 0 ]
+"81
+[v _escreve escreve `(v  1 e 1 0 ]
+"102
+[v _grava_caractere grava_caractere `(v  1 e 1 0 ]
+"111
+[v _usa_caractere usa_caractere `(v  1 e 1 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"34 C:\Users\Henrique\Desktop\projetos_aulas\PIC_display_lcd\lcdtest.X\lcdtest.c
+[v _main main `(v  1 e 1 0 ]
+"4 C:\Users\Henrique\Desktop\projetos_aulas\PIC_display_lcd\lcdtest.X\bibliotec_lcd.c
+[v _RS RS `VEi  1 e 2 0 ]
+[v _EN EN `VEi  1 e 2 0 ]
+[v _D4 D4 `VEi  1 e 2 0 ]
+[v _D5 D5 `VEi  1 e 2 0 ]
+[v _D6 D6 `VEi  1 e 2 0 ]
+[v _D7 D7 `VEi  1 e 2 0 ]
+"5
+[v _port_rs port_rs `*.39VEuc  1 e 2 0 ]
+[v _port_en port_en `*.39VEuc  1 e 2 0 ]
+[v _port_data port_data `*.39VEuc  1 e 2 0 ]
+"291 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"353
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"1541
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1603
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"24 C:\Users\Henrique\Desktop\projetos_aulas\PIC_display_lcd\lcdtest.X\lcdtest.c
+[v _robo robo `[8]uc  1 e 8 0 ]
+[s S22 . 12 `*.39VEuc 1 port_rs 2 0 `uc 1 pino_rs 1 2 `*.39VEuc 1 port_en 2 3 `uc 1 pino_en 1 5 `*.39VEuc 1 port_data 2 6 `uc 1 pino_d4 1 8 `uc 1 pino_d5 1 9 `uc 1 pino_d6 1 10 `uc 1 pino_d7 1 11 ]
+"27
+[v _lcd_pins lcd_pins `S22  1 e 12 0 ]
+"34
+[v _main main `(v  1 e 1 0 ]
+{
+"53
+} 0
+"111 C:\Users\Henrique\Desktop\projetos_aulas\PIC_display_lcd\lcdtest.X\bibliotec_lcd.c
+[v _usa_caractere usa_caractere `(v  1 e 1 0 ]
+{
+[v usa_caractere@lin lin `uc  1 a 1 wreg ]
+[v usa_caractere@lin lin `uc  1 a 1 wreg ]
+[v usa_caractere@col col `uc  1 p 1 3 ]
+[v usa_caractere@caractere caractere `uc  1 p 1 4 ]
+"113
+[v usa_caractere@lin lin `uc  1 a 1 5 ]
+"116
+} 0
+"47
+[v _lcd_init lcd_init `(v  1 e 1 0 ]
+{
+[s S22 . 12 `*.39VEuc 1 port_rs 2 0 `uc 1 pino_rs 1 2 `*.39VEuc 1 port_en 2 3 `uc 1 pino_en 1 5 `*.39VEuc 1 port_data 2 6 `uc 1 pino_d4 1 8 `uc 1 pino_d5 1 9 `uc 1 pino_d6 1 10 `uc 1 pino_d7 1 11 ]
+[v lcd_init@lcd_pins lcd_pins `*.4S22  1 a 1 wreg ]
+[v lcd_init@lcd_pins lcd_pins `*.4S22  1 a 1 wreg ]
+"50
+"47
+[v lcd_init@lcd_pins lcd_pins `*.4S22  1 a 1 5 ]
+"73
+} 0
+"102
+[v _grava_caractere grava_caractere `(v  1 e 1 0 ]
+{
+"105
+[v grava_caractere@i i `i  1 a 2 5 ]
+"102
+[v grava_caractere@linhas linhas `*.4uc  1 p 1 3 ]
+"109
+} 0
+"81
+[v _escreve escreve `(v  1 e 1 0 ]
+{
+[v escreve@lin lin `uc  1 a 1 wreg ]
+[v escreve@lin lin `uc  1 a 1 wreg ]
+[v escreve@col col `uc  1 p 1 3 ]
+[v escreve@str str `*.24uc  1 p 1 4 ]
+"83
+[v escreve@lin lin `uc  1 a 1 5 ]
+"89
+} 0
+"37
+[v _byte byte `(v  1 e 1 0 ]
+{
+[v byte@escreve escreve `i  1 p 2 11 ]
+[v byte@dado dado `uc  1 p 1 13 ]
+"45
+} 0
+"28
+[v _nibble nibble `(v  1 e 1 0 ]
+{
+[v nibble@dado dado `i  1 p 2 7 ]
+"35
+} 0
+"20
+[v _enable enable `(v  1 e 1 0 ]
+{
+"26
+} 0
+"7
+[v _muda_pin muda_pin `(v  1 e 1 0 ]
+{
+[v muda_pin@_port _port `*.39VEuc  1 p 2 0 ]
+[v muda_pin@_pin _pin `i  1 p 2 2 ]
+[v muda_pin@_val _val `i  1 p 2 4 ]
+"17
+} 0

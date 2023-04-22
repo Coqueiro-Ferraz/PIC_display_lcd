@@ -1,0 +1,2033 @@
+
+
+Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
+                                                                                               Fri Apr 21 22:23:37 2023
+
+Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1 
+     1                           	processor	16F887
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	idataBANK0,global,class=CODE,delta=2,noexec
+     5                           	psect	nvBANK0,global,class=BANK0,space=1,delta=1,noexec
+     6                           	psect	strings,global,class=STRING,delta=2,noexec
+     7                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     8                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1,noexec
+     9                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1,noexec
+    10                           	psect	inittext,global,class=CODE,delta=2
+    11                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+    12                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
+    13                           	psect	maintext,global,class=CODE,split=1,delta=2
+    14                           	psect	text1,local,class=CODE,merge=1,delta=2
+    15                           	psect	text2,local,class=CODE,merge=1,delta=2
+    16                           	psect	text3,local,class=CODE,merge=1,delta=2
+    17                           	psect	text4,local,class=CODE,merge=1,delta=2
+    18                           	psect	text5,local,class=CODE,merge=1,delta=2
+    19                           	psect	text6,local,class=CODE,merge=1,delta=2
+    20                           	psect	text7,local,class=CODE,merge=1,delta=2
+    21                           	psect	text8,local,class=CODE,merge=1,delta=2
+    22                           	psect	idloc,global,abs,ovrld,class=IDLOC,space=5,delta=2,noexec
+    23                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    24                           	dabs	1,0x7E,2
+    25     0000                     
+    26                           ; Version 2.40
+    27                           ; Generated 17/11/2021 GMT
+    28                           ; 
+    29                           ; Copyright © 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    30                           ; All rights reserved.
+    31                           ; 
+    32                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    33                           ; 
+    34                           ; Redistribution and use in source and binary forms, with or without modification, are
+    35                           ; permitted provided that the following conditions are met:
+    36                           ; 
+    37                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    38                           ;        conditions and the following disclaimer.
+    39                           ; 
+    40                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    41                           ;        of conditions and the following disclaimer in the documentation and/or other
+    42                           ;        materials provided with the distribution. Publication is not required when
+    43                           ;        this file is used in an embedded application.
+    44                           ; 
+    45                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    46                           ;        software without specific prior written permission.
+    47                           ; 
+    48                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    49                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    50                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    51                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    52                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    53                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    54                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    55                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    56                           ; 
+    57                           ; 
+    58                           ; Code-generator required, PIC16F887 Definitions
+    59                           ; 
+    60                           ; SFR Addresses
+    61     0000                     	;# 
+    62     0001                     	;# 
+    63     0002                     	;# 
+    64     0003                     	;# 
+    65     0004                     	;# 
+    66     0005                     	;# 
+    67     0006                     	;# 
+    68     0007                     	;# 
+    69     0008                     	;# 
+    70     0009                     	;# 
+    71     000A                     	;# 
+    72     000B                     	;# 
+    73     000C                     	;# 
+    74     000D                     	;# 
+    75     000E                     	;# 
+    76     000E                     	;# 
+    77     000F                     	;# 
+    78     0010                     	;# 
+    79     0011                     	;# 
+    80     0012                     	;# 
+    81     0013                     	;# 
+    82     0014                     	;# 
+    83     0015                     	;# 
+    84     0015                     	;# 
+    85     0016                     	;# 
+    86     0017                     	;# 
+    87     0018                     	;# 
+    88     0019                     	;# 
+    89     001A                     	;# 
+    90     001B                     	;# 
+    91     001B                     	;# 
+    92     001C                     	;# 
+    93     001D                     	;# 
+    94     001E                     	;# 
+    95     001F                     	;# 
+    96     0081                     	;# 
+    97     0085                     	;# 
+    98     0086                     	;# 
+    99     0087                     	;# 
+   100     0088                     	;# 
+   101     0089                     	;# 
+   102     008C                     	;# 
+   103     008D                     	;# 
+   104     008E                     	;# 
+   105     008F                     	;# 
+   106     0090                     	;# 
+   107     0091                     	;# 
+   108     0092                     	;# 
+   109     0093                     	;# 
+   110     0093                     	;# 
+   111     0093                     	;# 
+   112     0094                     	;# 
+   113     0095                     	;# 
+   114     0096                     	;# 
+   115     0097                     	;# 
+   116     0098                     	;# 
+   117     0099                     	;# 
+   118     009A                     	;# 
+   119     009B                     	;# 
+   120     009C                     	;# 
+   121     009D                     	;# 
+   122     009E                     	;# 
+   123     009F                     	;# 
+   124     0105                     	;# 
+   125     0107                     	;# 
+   126     0108                     	;# 
+   127     0109                     	;# 
+   128     010C                     	;# 
+   129     010C                     	;# 
+   130     010D                     	;# 
+   131     010E                     	;# 
+   132     010F                     	;# 
+   133     0185                     	;# 
+   134     0187                     	;# 
+   135     0188                     	;# 
+   136     0189                     	;# 
+   137     018C                     	;# 
+   138     018D                     	;# 
+   139     0000                     	;# 
+   140     0001                     	;# 
+   141     0002                     	;# 
+   142     0003                     	;# 
+   143     0004                     	;# 
+   144     0005                     	;# 
+   145     0006                     	;# 
+   146     0007                     	;# 
+   147     0008                     	;# 
+   148     0009                     	;# 
+   149     000A                     	;# 
+   150     000B                     	;# 
+   151     000C                     	;# 
+   152     000D                     	;# 
+   153     000E                     	;# 
+   154     000E                     	;# 
+   155     000F                     	;# 
+   156     0010                     	;# 
+   157     0011                     	;# 
+   158     0012                     	;# 
+   159     0013                     	;# 
+   160     0014                     	;# 
+   161     0015                     	;# 
+   162     0015                     	;# 
+   163     0016                     	;# 
+   164     0017                     	;# 
+   165     0018                     	;# 
+   166     0019                     	;# 
+   167     001A                     	;# 
+   168     001B                     	;# 
+   169     001B                     	;# 
+   170     001C                     	;# 
+   171     001D                     	;# 
+   172     001E                     	;# 
+   173     001F                     	;# 
+   174     0081                     	;# 
+   175     0085                     	;# 
+   176     0086                     	;# 
+   177     0087                     	;# 
+   178     0088                     	;# 
+   179     0089                     	;# 
+   180     008C                     	;# 
+   181     008D                     	;# 
+   182     008E                     	;# 
+   183     008F                     	;# 
+   184     0090                     	;# 
+   185     0091                     	;# 
+   186     0092                     	;# 
+   187     0093                     	;# 
+   188     0093                     	;# 
+   189     0093                     	;# 
+   190     0094                     	;# 
+   191     0095                     	;# 
+   192     0096                     	;# 
+   193     0097                     	;# 
+   194     0098                     	;# 
+   195     0099                     	;# 
+   196     009A                     	;# 
+   197     009B                     	;# 
+   198     009C                     	;# 
+   199     009D                     	;# 
+   200     009E                     	;# 
+   201     009F                     	;# 
+   202     0105                     	;# 
+   203     0107                     	;# 
+   204     0108                     	;# 
+   205     0109                     	;# 
+   206     010C                     	;# 
+   207     010C                     	;# 
+   208     010D                     	;# 
+   209     010E                     	;# 
+   210     010F                     	;# 
+   211     0185                     	;# 
+   212     0187                     	;# 
+   213     0188                     	;# 
+   214     0189                     	;# 
+   215     018C                     	;# 
+   216     018D                     	;# 
+   217     0000                     	;# 
+   218     0001                     	;# 
+   219     0002                     	;# 
+   220     0003                     	;# 
+   221     0004                     	;# 
+   222     0005                     	;# 
+   223     0006                     	;# 
+   224     0007                     	;# 
+   225     0008                     	;# 
+   226     0009                     	;# 
+   227     000A                     	;# 
+   228     000B                     	;# 
+   229     000C                     	;# 
+   230     000D                     	;# 
+   231     000E                     	;# 
+   232     000E                     	;# 
+   233     000F                     	;# 
+   234     0010                     	;# 
+   235     0011                     	;# 
+   236     0012                     	;# 
+   237     0013                     	;# 
+   238     0014                     	;# 
+   239     0015                     	;# 
+   240     0015                     	;# 
+   241     0016                     	;# 
+   242     0017                     	;# 
+   243     0018                     	;# 
+   244     0019                     	;# 
+   245     001A                     	;# 
+   246     001B                     	;# 
+   247     001B                     	;# 
+   248     001C                     	;# 
+   249     001D                     	;# 
+   250     001E                     	;# 
+   251     001F                     	;# 
+   252     0081                     	;# 
+   253     0085                     	;# 
+   254     0086                     	;# 
+   255     0087                     	;# 
+   256     0088                     	;# 
+   257     0089                     	;# 
+   258     008C                     	;# 
+   259     008D                     	;# 
+   260     008E                     	;# 
+   261     008F                     	;# 
+   262     0090                     	;# 
+   263     0091                     	;# 
+   264     0092                     	;# 
+   265     0093                     	;# 
+   266     0093                     	;# 
+   267     0093                     	;# 
+   268     0094                     	;# 
+   269     0095                     	;# 
+   270     0096                     	;# 
+   271     0097                     	;# 
+   272     0098                     	;# 
+   273     0099                     	;# 
+   274     009A                     	;# 
+   275     009B                     	;# 
+   276     009C                     	;# 
+   277     009D                     	;# 
+   278     009E                     	;# 
+   279     009F                     	;# 
+   280     0105                     	;# 
+   281     0107                     	;# 
+   282     0108                     	;# 
+   283     0109                     	;# 
+   284     010C                     	;# 
+   285     010C                     	;# 
+   286     010D                     	;# 
+   287     010E                     	;# 
+   288     010F                     	;# 
+   289     0185                     	;# 
+   290     0187                     	;# 
+   291     0188                     	;# 
+   292     0189                     	;# 
+   293     018C                     	;# 
+   294     018D                     	;# 
+   295                           
+   296                           	psect	idataBANK0
+   297     0520                     __pidataBANK0:
+   298                           
+   299                           ;initializer for _lcd_pins
+   300     0520  3407               	retlw	7
+   301     0521  3400               	retlw	0
+   302     0522  3400               	retlw	0
+   303     0523  3408               	retlw	8
+   304     0524  3400               	retlw	0
+   305     0525  3400               	retlw	0
+   306     0526  3407               	retlw	7
+   307     0527  3400               	retlw	0
+   308     0528  3402               	retlw	2
+   309     0529  3403               	retlw	3
+   310     052A  3404               	retlw	4
+   311     052B  3405               	retlw	5
+   312                           
+   313                           ;initializer for _robo
+   314     052C  340E               	retlw	14
+   315     052D  3411               	retlw	17
+   316     052E  340E               	retlw	14
+   317     052F  3404               	retlw	4
+   318     0530  341F               	retlw	31
+   319     0531  3404               	retlw	4
+   320     0532  340A               	retlw	10
+   321     0533  3410               	retlw	16
+   322                           
+   323                           	psect	nvBANK0
+   324     0047                     __pnvBANK0:
+   325     0047                     _port_data:
+   326     0047                     	ds	2
+   327     0049                     _port_en:
+   328     0049                     	ds	2
+   329     004B                     _port_rs:
+   330     004B                     	ds	2
+   331     0008                     _PORTD	set	8
+   332     0007                     _PORTC	set	7
+   333     0088                     _TRISD	set	136
+   334     0087                     _TRISC	set	135
+   335                           
+   336                           	psect	strings
+   337     0003                     __pstrings:
+   338     0003                     stringtab:
+   339     0003                     __stringtab:
+   340     0003                     stringcode:	
+   341                           ;	String table - string pointers are 1 byte each
+   342                           
+   343     0003                     stringdir:
+   344     0003  3000               	movlw	high stringdir
+   345     0004  008A               	movwf	10
+   346     0005  0804               	movf	4,w
+   347     0006  0A84               	incf	4,f
+   348     0007  0782               	addwf	2,f
+   349     0008                     __stringbase:
+   350     0008  3400               	retlw	0
+   351     0009                     __end_of__stringtab:
+   352     0009                     STR_1:
+   353     0009  3448               	retlw	72	;'H'
+   354     000A  3465               	retlw	101	;'e'
+   355     000B  346E               	retlw	110	;'n'
+   356     000C  3472               	retlw	114	;'r'
+   357     000D  3469               	retlw	105	;'i'
+   358     000E  3471               	retlw	113	;'q'
+   359     000F  3475               	retlw	117	;'u'
+   360     0010  3465               	retlw	101	;'e'
+   361     0011  3400               	retlw	0
+   362                           
+   363                           	psect	cinit
+   364     07E2                     start_initialization:	
+   365                           ; #config settings
+   366                           
+   367     07E2                     __initialization:
+   368                           
+   369                           ; Initialize objects allocated to BANK0
+   370     07E2  1383               	bcf	3,7	;select IRP bank0
+   371     07E3  3034               	movlw	low (__pdataBANK0+20)
+   372     07E4  00FD               	movwf	btemp+-1
+   373     07E5  3005               	movlw	high __pidataBANK0
+   374     07E6  00FE               	movwf	btemp
+   375     07E7  3020               	movlw	low __pidataBANK0
+   376     07E8  00FF               	movwf	btemp+1
+   377     07E9  3020               	movlw	low __pdataBANK0
+   378     07EA  0084               	movwf	4
+   379     07EB  120A  118A  2511  120A  118A  	fcall	init_ram0
+   380                           
+   381                           ; Clear objects allocated to BANK0
+   382     07F0  01B4               	clrf	__pbssBANK0& (0+127)
+   383     07F1  01B5               	clrf	(__pbssBANK0+1)& (0+127)
+   384     07F2  01B6               	clrf	(__pbssBANK0+2)& (0+127)
+   385     07F3  01B7               	clrf	(__pbssBANK0+3)& (0+127)
+   386     07F4  01B8               	clrf	(__pbssBANK0+4)& (0+127)
+   387     07F5  01B9               	clrf	(__pbssBANK0+5)& (0+127)
+   388     07F6  01BA               	clrf	(__pbssBANK0+6)& (0+127)
+   389     07F7  01BB               	clrf	(__pbssBANK0+7)& (0+127)
+   390     07F8  01BC               	clrf	(__pbssBANK0+8)& (0+127)
+   391     07F9  01BD               	clrf	(__pbssBANK0+9)& (0+127)
+   392     07FA  01BE               	clrf	(__pbssBANK0+10)& (0+127)
+   393     07FB  01BF               	clrf	(__pbssBANK0+11)& (0+127)
+   394     07FC                     end_of_initialization:	
+   395                           ;End of C runtime variable initialization code
+   396                           
+   397     07FC                     __end_of__initialization:
+   398     07FC  0183               	clrf	3
+   399     07FD  120A  118A  2DFA   	ljmp	_main	;jump to C main() function
+   400                           
+   401                           	psect	bssBANK0
+   402     0034                     __pbssBANK0:
+   403     0034                     _D7:
+   404     0034                     	ds	2
+   405     0036                     _D6:
+   406     0036                     	ds	2
+   407     0038                     _D5:
+   408     0038                     	ds	2
+   409     003A                     _D4:
+   410     003A                     	ds	2
+   411     003C                     _EN:
+   412     003C                     	ds	2
+   413     003E                     _RS:
+   414     003E                     	ds	2
+   415                           
+   416                           	psect	dataBANK0
+   417     0020                     __pdataBANK0:
+   418     0020                     _lcd_pins:
+   419     0020                     	ds	12
+   420     002C                     _robo:
+   421     002C                     	ds	8
+   422                           
+   423                           	psect	inittext
+   424     050D                     init_fetch0:	
+   425                           ;	Called with low address in FSR and high address in W
+   426                           
+   427     050D  087E               	movf	btemp,w
+   428     050E  008A               	movwf	10
+   429     050F  087F               	movf	btemp+1,w
+   430     0510  0082               	movwf	2
+   431     0511                     init_ram0:	
+   432                           ;Called with:
+   433                           ;	high address of idata address in btemp 
+   434                           ;	low address of idata address in btemp+1 
+   435                           ;	low address of data in FSR
+   436                           ;	high address + 1 of data in btemp-1
+   437                           
+   438     0511  120A  118A  250D  120A  118A  	fcall	init_fetch0
+   439     0516  0080               	movwf	0
+   440     0517  0A84               	incf	4,f
+   441     0518  0804               	movf	4,w
+   442     0519  067D               	xorwf	btemp+-1,w
+   443     051A  1903               	btfsc	3,2
+   444     051B  3400               	retlw	0
+   445     051C  0AFF               	incf	btemp+1,f
+   446     051D  1903               	btfsc	3,2
+   447     051E  0AFE               	incf	btemp,f
+   448     051F  2D11               	goto	init_ram0
+   449                           
+   450                           	psect	cstackCOMMON
+   451     0070                     __pcstackCOMMON:
+   452     0070                     ?_lcd_init:
+   453     0070                     ?_main:	
+   454                           ; 1 bytes @ 0x0
+   455                           
+   456     0070                     ?_muda_pin:	
+   457                           ; 1 bytes @ 0x0
+   458                           
+   459     0070                     ?_enable:	
+   460                           ; 1 bytes @ 0x0
+   461                           
+   462     0070                     grava_caractere@pos:	
+   463                           ; 1 bytes @ 0x0
+   464                           
+   465     0070                     muda_pin@_port:	
+   466                           ; 1 bytes @ 0x0
+   467                           
+   468                           
+   469                           ; 2 bytes @ 0x0
+   470     0070                     	ds	2
+   471     0072                     muda_pin@_pin:
+   472                           
+   473                           ; 2 bytes @ 0x2
+   474     0072                     	ds	2
+   475     0074                     muda_pin@_val:
+   476                           
+   477                           ; 2 bytes @ 0x4
+   478     0074                     	ds	2
+   479     0076                     ??_muda_pin:
+   480                           
+   481                           ; 1 bytes @ 0x6
+   482     0076                     	ds	1
+   483     0077                     ??_enable:
+   484     0077                     ?_nibble:	
+   485                           ; 1 bytes @ 0x7
+   486                           
+   487     0077                     nibble@dado:	
+   488                           ; 1 bytes @ 0x7
+   489                           
+   490                           
+   491                           ; 2 bytes @ 0x7
+   492     0077                     	ds	2
+   493     0079                     ??_nibble:
+   494                           
+   495                           ; 1 bytes @ 0x9
+   496     0079                     	ds	2
+   497     007B                     ?_byte:
+   498     007B                     byte@escreve:	
+   499                           ; 1 bytes @ 0xB
+   500                           
+   501                           
+   502                           ; 2 bytes @ 0xB
+   503     007B                     	ds	2
+   504     007D                     byte@dado:
+   505                           
+   506                           ; 1 bytes @ 0xD
+   507     007D                     	ds	1
+   508     007E                     ??_escreve:
+   509     007E                     ??_usa_caractere:	
+   510                           ; 1 bytes @ 0xE
+   511                           
+   512     007E                     ??_main:	
+   513                           ; 1 bytes @ 0xE
+   514                           
+   515                           
+   516                           	psect	cstackBANK0
+   517     0040                     __pcstackBANK0:	
+   518                           ; 1 bytes @ 0xE
+   519                           
+   520     0040                     ??_byte:
+   521                           
+   522                           ; 1 bytes @ 0x0
+   523     0040                     	ds	3
+   524     0043                     ??_lcd_init:
+   525     0043                     ?_escreve:	
+   526                           ; 1 bytes @ 0x3
+   527                           
+   528     0043                     ?_grava_caractere:	
+   529                           ; 1 bytes @ 0x3
+   530                           
+   531     0043                     ?_usa_caractere:	
+   532                           ; 1 bytes @ 0x3
+   533                           
+   534     0043                     escreve@col:	
+   535                           ; 1 bytes @ 0x3
+   536                           
+   537     0043                     grava_caractere@linhas:	
+   538                           ; 1 bytes @ 0x3
+   539                           
+   540     0043                     usa_caractere@col:	
+   541                           ; 1 bytes @ 0x3
+   542                           
+   543                           
+   544                           ; 1 bytes @ 0x3
+   545     0043                     	ds	1
+   546     0044                     ??_grava_caractere:
+   547     0044                     escreve@str:	
+   548                           ; 1 bytes @ 0x4
+   549                           
+   550     0044                     usa_caractere@caractere:	
+   551                           ; 1 bytes @ 0x4
+   552                           
+   553                           
+   554                           ; 1 bytes @ 0x4
+   555     0044                     	ds	1
+   556     0045                     lcd_init@lcd_pins:
+   557     0045                     escreve@lin:	
+   558                           ; 1 bytes @ 0x5
+   559                           
+   560     0045                     usa_caractere@lin:	
+   561                           ; 1 bytes @ 0x5
+   562                           
+   563     0045                     grava_caractere@i:	
+   564                           ; 1 bytes @ 0x5
+   565                           
+   566                           
+   567                           ; 2 bytes @ 0x5
+   568     0045                     	ds	2
+   569                           
+   570                           	psect	maintext
+   571     05FA                     __pmaintext:	
+   572 ;;
+   573 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   574 ;;
+   575 ;; *************** function _main *****************
+   576 ;; Defined at:
+   577 ;;		line 34 in file "lcdtest.c"
+   578 ;; Parameters:    Size  Location     Type
+   579 ;;		None
+   580 ;; Auto vars:     Size  Location     Type
+   581 ;;		None
+   582 ;; Return value:  Size  Location     Type
+   583 ;;                  1    wreg      void 
+   584 ;; Registers used:
+   585 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   586 ;; Tracked objects:
+   587 ;;		On entry : B00/0
+   588 ;;		On exit  : 0/0
+   589 ;;		Unchanged: 0/0
+   590 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   591 ;;      Params:         0       0       0       0       0
+   592 ;;      Locals:         0       0       0       0       0
+   593 ;;      Temps:          0       0       0       0       0
+   594 ;;      Totals:         0       0       0       0       0
+   595 ;;Total ram usage:        0 bytes
+   596 ;; Hardware stack levels required when called: 4
+   597 ;; This function calls:
+   598 ;;		_escreve
+   599 ;;		_grava_caractere
+   600 ;;		_lcd_init
+   601 ;;		_usa_caractere
+   602 ;; This function is called by:
+   603 ;;		Startup code after reset
+   604 ;; This function uses a non-reentrant model
+   605 ;;
+   606                           
+   607     05FA                     _main:	
+   608                           ;psect for function _main
+   609                           
+   610     05FA                     l852:	
+   611                           ;incstack = 0
+   612                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   613                           
+   614                           
+   615                           ;lcdtest.c: 36:     TRISC = 0x00;
+   616     05FA  1683               	bsf	3,5	;RP0=1, select bank1
+   617     05FB  1303               	bcf	3,6	;RP1=0, select bank1
+   618     05FC  0187               	clrf	7	;volatile
+   619                           
+   620                           ;lcdtest.c: 37:     PORTC = 0x00;
+   621     05FD  1283               	bcf	3,5	;RP0=0, select bank0
+   622     05FE  1303               	bcf	3,6	;RP1=0, select bank0
+   623     05FF  0187               	clrf	7	;volatile
+   624                           
+   625                           ;lcdtest.c: 38:     TRISD = 0x00;
+   626     0600  1683               	bsf	3,5	;RP0=1, select bank1
+   627     0601  1303               	bcf	3,6	;RP1=0, select bank1
+   628     0602  0188               	clrf	8	;volatile
+   629                           
+   630                           ;lcdtest.c: 39:     PORTD = 0x00;
+   631     0603  1283               	bcf	3,5	;RP0=0, select bank0
+   632     0604  1303               	bcf	3,6	;RP1=0, select bank0
+   633     0605  0188               	clrf	8	;volatile
+   634     0606                     l854:
+   635                           
+   636                           ;lcdtest.c: 41:     lcd_init(&lcd_pins);
+   637     0606  3020               	movlw	(low (_lcd_pins| 0))& (0+255)
+   638     0607  120A  118A  273B  120A  118A  	fcall	_lcd_init
+   639     060C                     l856:
+   640                           
+   641                           ;lcdtest.c: 42:     escreve(2,3,"Henrique");
+   642     060C  3003               	movlw	3
+   643     060D  1283               	bcf	3,5	;RP0=0, select bank0
+   644     060E  1303               	bcf	3,6	;RP1=0, select bank0
+   645     060F  00C3               	movwf	escreve@col
+   646     0610  3001               	movlw	(low ((STR_1-__stringbase)| (0+32768)))& (0+255)
+   647     0611  00C4               	movwf	escreve@str
+   648     0612  3002               	movlw	2
+   649     0613  120A  118A  2682  120A  118A  	fcall	_escreve
+   650     0618                     l858:
+   651                           
+   652                           ;lcdtest.c: 43:     grava_caractere(0, &robo[0]);
+   653     0618  302C               	movlw	(low (_robo| 0))& (0+255)
+   654     0619  1283               	bcf	3,5	;RP0=0, select bank0
+   655     061A  1303               	bcf	3,6	;RP1=0, select bank0
+   656     061B  00C3               	movwf	grava_caractere@linhas
+   657     061C  3000               	movlw	0
+   658     061D  120A  118A  25C3  120A  118A  	fcall	_grava_caractere
+   659     0622                     l860:
+   660                           
+   661                           ;lcdtest.c: 47:     usa_caractere(1,2,0);
+   662     0622  3002               	movlw	2
+   663     0623  1283               	bcf	3,5	;RP0=0, select bank0
+   664     0624  1303               	bcf	3,6	;RP1=0, select bank0
+   665     0625  00C3               	movwf	usa_caractere@col
+   666     0626  01C4               	clrf	usa_caractere@caractere
+   667     0627  3001               	movlw	1
+   668     0628  120A  118A  2561  120A  118A  	fcall	_usa_caractere
+   669     062D                     l862:
+   670                           
+   671                           ;lcdtest.c: 48:     usa_caractere(1,4,'5');
+   672     062D  3004               	movlw	4
+   673     062E  1283               	bcf	3,5	;RP0=0, select bank0
+   674     062F  1303               	bcf	3,6	;RP1=0, select bank0
+   675     0630  00C3               	movwf	usa_caractere@col
+   676     0631  3035               	movlw	53
+   677     0632  00C4               	movwf	usa_caractere@caractere
+   678     0633  3001               	movlw	1
+   679     0634  120A  118A  2561  120A  118A  	fcall	_usa_caractere
+   680     0639                     l25:	
+   681                           ;lcdtest.c: 49:     while(1)
+   682                           
+   683     0639                     l26:	
+   684                           ;lcdtest.c: 50:     {;lcdtest.c: 52:     }
+   685                           
+   686     0639  2E39               	goto	l25
+   687     063A  120A  118A  2800   	ljmp	start
+   688     063D                     __end_of_main:
+   689                           
+   690                           	psect	text1
+   691     0561                     __ptext1:	
+   692 ;; *************** function _usa_caractere *****************
+   693 ;; Defined at:
+   694 ;;		line 111 in file "bibliotec_lcd.c"
+   695 ;; Parameters:    Size  Location     Type
+   696 ;;  lin             1    wreg     unsigned char 
+   697 ;;  col             1    3[BANK0 ] unsigned char 
+   698 ;;  caractere       1    4[BANK0 ] unsigned char 
+   699 ;; Auto vars:     Size  Location     Type
+   700 ;;  lin             1    5[BANK0 ] unsigned char 
+   701 ;; Return value:  Size  Location     Type
+   702 ;;                  1    wreg      void 
+   703 ;; Registers used:
+   704 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   705 ;; Tracked objects:
+   706 ;;		On entry : 0/0
+   707 ;;		On exit  : 0/0
+   708 ;;		Unchanged: 0/0
+   709 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   710 ;;      Params:         0       2       0       0       0
+   711 ;;      Locals:         0       1       0       0       0
+   712 ;;      Temps:          0       0       0       0       0
+   713 ;;      Totals:         0       3       0       0       0
+   714 ;;Total ram usage:        3 bytes
+   715 ;; Hardware stack levels used: 1
+   716 ;; Hardware stack levels required when called: 3
+   717 ;; This function calls:
+   718 ;;		_byte
+   719 ;; This function is called by:
+   720 ;;		_main
+   721 ;; This function uses a non-reentrant model
+   722 ;;
+   723                           
+   724     0561                     _usa_caractere:	
+   725                           ;psect for function _usa_caractere
+   726                           
+   727                           
+   728                           ;incstack = 0
+   729                           ; Regs used in _usa_caractere: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   730                           ;usa_caractere@lin stored from wreg
+   731     0561  1283               	bcf	3,5	;RP0=0, select bank0
+   732     0562  1303               	bcf	3,6	;RP1=0, select bank0
+   733     0563  00C5               	movwf	usa_caractere@lin
+   734     0564                     l846:
+   735                           
+   736                           ;bibliotec_lcd.c: 111: void usa_caractere (char lin, char col, char caractere);bibliotec
+      +                          _lcd.c: 112: {;bibliotec_lcd.c: 113:     if(lin == 1)byte(0,0x80 + col);
+   737     0564  0345               	decf	usa_caractere@lin,w
+   738     0565  1D03               	btfss	3,2
+   739     0566  2D68               	goto	u181
+   740     0567  2D69               	goto	u180
+   741     0568                     u181:
+   742     0568  2D75               	goto	l850
+   743     0569                     u180:
+   744     0569                     l848:
+   745     0569  3000               	movlw	0
+   746     056A  00FB               	movwf	byte@escreve
+   747     056B  00FC               	movwf	byte@escreve+1
+   748     056C  0843               	movf	usa_caractere@col,w
+   749     056D  3E80               	addlw	128
+   750     056E  00FD               	movwf	byte@dado
+   751     056F  120A  118A  263D  120A  118A  	fcall	_byte
+   752     0574  2D80               	goto	l95
+   753     0575                     l850:
+   754     0575  3000               	movlw	0
+   755     0576  00FB               	movwf	byte@escreve
+   756     0577  00FC               	movwf	byte@escreve+1
+   757     0578  0843               	movf	usa_caractere@col,w
+   758     0579  3EC0               	addlw	192
+   759     057A  00FD               	movwf	byte@dado
+   760     057B  120A  118A  263D  120A  118A  	fcall	_byte
+   761     0580                     l95:
+   762                           
+   763                           ;bibliotec_lcd.c: 115:     byte(1, caractere);
+   764     0580  3001               	movlw	1
+   765     0581  00FB               	movwf	byte@escreve
+   766     0582  3000               	movlw	0
+   767     0583  00FC               	movwf	byte@escreve+1
+   768     0584  1283               	bcf	3,5	;RP0=0, select bank0
+   769     0585  1303               	bcf	3,6	;RP1=0, select bank0
+   770     0586  0844               	movf	usa_caractere@caractere,w
+   771     0587  00FD               	movwf	byte@dado
+   772     0588  120A  118A  263D  120A  118A  	fcall	_byte
+   773     058D                     l96:
+   774     058D  0008               	return
+   775     058E                     __end_of_usa_caractere:
+   776                           
+   777                           	psect	text2
+   778     073B                     __ptext2:	
+   779 ;; *************** function _lcd_init *****************
+   780 ;; Defined at:
+   781 ;;		line 47 in file "bibliotec_lcd.c"
+   782 ;; Parameters:    Size  Location     Type
+   783 ;;  lcd_pins        1    wreg     PTR struct .
+   784 ;;		 -> lcd_pins(12), 
+   785 ;; Auto vars:     Size  Location     Type
+   786 ;;  lcd_pins        1    5[BANK0 ] PTR struct .
+   787 ;;		 -> lcd_pins(12), 
+   788 ;; Return value:  Size  Location     Type
+   789 ;;                  1    wreg      void 
+   790 ;; Registers used:
+   791 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   792 ;; Tracked objects:
+   793 ;;		On entry : 0/0
+   794 ;;		On exit  : 0/0
+   795 ;;		Unchanged: 0/0
+   796 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   797 ;;      Params:         0       0       0       0       0
+   798 ;;      Locals:         0       1       0       0       0
+   799 ;;      Temps:          0       2       0       0       0
+   800 ;;      Totals:         0       3       0       0       0
+   801 ;;Total ram usage:        3 bytes
+   802 ;; Hardware stack levels used: 1
+   803 ;; Hardware stack levels required when called: 3
+   804 ;; This function calls:
+   805 ;;		_byte
+   806 ;;		_enable
+   807 ;;		_nibble
+   808 ;; This function is called by:
+   809 ;;		_main
+   810 ;; This function uses a non-reentrant model
+   811 ;;
+   812                           
+   813     073B                     _lcd_init:	
+   814                           ;psect for function _lcd_init
+   815                           
+   816                           
+   817                           ;incstack = 0
+   818                           ; Regs used in _lcd_init: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   819                           ;lcd_init@lcd_pins stored from wreg
+   820     073B  1283               	bcf	3,5	;RP0=0, select bank0
+   821     073C  1303               	bcf	3,6	;RP1=0, select bank0
+   822     073D  00C5               	movwf	lcd_init@lcd_pins
+   823     073E                     l802:
+   824                           
+   825                           ;bibliotec_lcd.c: 47: void lcd_init( lcd_pin_t *lcd_pins);bibliotec_lcd.c: 48: {;bibliot
+      +                          ec_lcd.c: 50:     port_rs = lcd_pins->port_rs;
+   826     073E  0845               	movf	lcd_init@lcd_pins,w
+   827     073F  0084               	movwf	4
+   828     0740  1383               	bcf	3,7	;select IRP bank0
+   829     0741  0800               	movf	0,w
+   830     0742  00CB               	movwf	_port_rs
+   831     0743  0A84               	incf	4,f
+   832     0744  0800               	movf	0,w
+   833     0745  0384               	decf	4,f
+   834     0746  00CC               	movwf	_port_rs+1
+   835                           
+   836                           ;bibliotec_lcd.c: 51:     port_en = lcd_pins->port_en;
+   837     0747  0845               	movf	lcd_init@lcd_pins,w
+   838     0748  3E03               	addlw	3
+   839     0749  0084               	movwf	4
+   840     074A  0800               	movf	0,w
+   841     074B  00C9               	movwf	_port_en
+   842     074C  0A84               	incf	4,f
+   843     074D  0800               	movf	0,w
+   844     074E  0384               	decf	4,f
+   845     074F  00CA               	movwf	_port_en+1
+   846                           
+   847                           ;bibliotec_lcd.c: 52:     port_data = lcd_pins->port_data;
+   848     0750  0845               	movf	lcd_init@lcd_pins,w
+   849     0751  3E06               	addlw	6
+   850     0752  0084               	movwf	4
+   851     0753  0800               	movf	0,w
+   852     0754  00C7               	movwf	_port_data
+   853     0755  0A84               	incf	4,f
+   854     0756  0800               	movf	0,w
+   855     0757  0384               	decf	4,f
+   856     0758  00C8               	movwf	_port_data+1
+   857                           
+   858                           ;bibliotec_lcd.c: 53:     RS = lcd_pins->pino_rs;
+   859     0759  0845               	movf	lcd_init@lcd_pins,w
+   860     075A  3E02               	addlw	2
+   861     075B  0084               	movwf	4
+   862     075C  0800               	movf	0,w
+   863     075D  00C3               	movwf	??_lcd_init
+   864     075E  01C4               	clrf	??_lcd_init+1
+   865     075F  0843               	movf	??_lcd_init,w
+   866     0760  00BE               	movwf	_RS	;volatile
+   867     0761  0844               	movf	??_lcd_init+1,w
+   868     0762  00BF               	movwf	_RS+1	;volatile
+   869                           
+   870                           ;bibliotec_lcd.c: 54:     EN = lcd_pins->pino_en;
+   871     0763  0845               	movf	lcd_init@lcd_pins,w
+   872     0764  3E05               	addlw	5
+   873     0765  0084               	movwf	4
+   874     0766  0800               	movf	0,w
+   875     0767  00C3               	movwf	??_lcd_init
+   876     0768  01C4               	clrf	??_lcd_init+1
+   877     0769  0843               	movf	??_lcd_init,w
+   878     076A  00BC               	movwf	_EN	;volatile
+   879     076B  0844               	movf	??_lcd_init+1,w
+   880     076C  00BD               	movwf	_EN+1	;volatile
+   881                           
+   882                           ;bibliotec_lcd.c: 55:     D4 = lcd_pins->pino_d4;
+   883     076D  0845               	movf	lcd_init@lcd_pins,w
+   884     076E  3E08               	addlw	8
+   885     076F  0084               	movwf	4
+   886     0770  0800               	movf	0,w
+   887     0771  00C3               	movwf	??_lcd_init
+   888     0772  01C4               	clrf	??_lcd_init+1
+   889     0773  0843               	movf	??_lcd_init,w
+   890     0774  00BA               	movwf	_D4	;volatile
+   891     0775  0844               	movf	??_lcd_init+1,w
+   892     0776  00BB               	movwf	_D4+1	;volatile
+   893                           
+   894                           ;bibliotec_lcd.c: 56:     D5 = lcd_pins->pino_d5;
+   895     0777  0845               	movf	lcd_init@lcd_pins,w
+   896     0778  3E09               	addlw	9
+   897     0779  0084               	movwf	4
+   898     077A  0800               	movf	0,w
+   899     077B  00C3               	movwf	??_lcd_init
+   900     077C  01C4               	clrf	??_lcd_init+1
+   901     077D  0843               	movf	??_lcd_init,w
+   902     077E  00B8               	movwf	_D5	;volatile
+   903     077F  0844               	movf	??_lcd_init+1,w
+   904     0780  00B9               	movwf	_D5+1	;volatile
+   905                           
+   906                           ;bibliotec_lcd.c: 57:     D6 = lcd_pins->pino_d6;
+   907     0781  0845               	movf	lcd_init@lcd_pins,w
+   908     0782  3E0A               	addlw	10
+   909     0783  0084               	movwf	4
+   910     0784  0800               	movf	0,w
+   911     0785  00C3               	movwf	??_lcd_init
+   912     0786  01C4               	clrf	??_lcd_init+1
+   913     0787  0843               	movf	??_lcd_init,w
+   914     0788  00B6               	movwf	_D6	;volatile
+   915     0789  0844               	movf	??_lcd_init+1,w
+   916     078A  00B7               	movwf	_D6+1	;volatile
+   917                           
+   918                           ;bibliotec_lcd.c: 58:     D7 = lcd_pins->pino_d7;
+   919     078B  0845               	movf	lcd_init@lcd_pins,w
+   920     078C  3E0B               	addlw	11
+   921     078D  0084               	movwf	4
+   922     078E  0800               	movf	0,w
+   923     078F  00C3               	movwf	??_lcd_init
+   924     0790  01C4               	clrf	??_lcd_init+1
+   925     0791  0843               	movf	??_lcd_init,w
+   926     0792  00B4               	movwf	_D7	;volatile
+   927     0793  0844               	movf	??_lcd_init+1,w
+   928     0794  00B5               	movwf	_D7+1	;volatile
+   929     0795                     l804:
+   930                           
+   931                           ;bibliotec_lcd.c: 60:     _delay((unsigned long)((50)*(4000000/4000.0)));
+   932     0795  3041               	movlw	65
+   933     0796  1283               	bcf	3,5	;RP0=0, select bank0
+   934     0797  1303               	bcf	3,6	;RP1=0, select bank0
+   935     0798  00C4               	movwf	??_lcd_init+1
+   936     0799  30ED               	movlw	237
+   937     079A  00C3               	movwf	??_lcd_init
+   938     079B                     u217:
+   939     079B  0BC3               	decfsz	??_lcd_init,f
+   940     079C  2F9B               	goto	u217
+   941     079D  0BC4               	decfsz	??_lcd_init+1,f
+   942     079E  2F9B               	goto	u217
+   943     079F  2FA0               	nop2
+   944     07A0                     l806:
+   945                           
+   946                           ;bibliotec_lcd.c: 61:     nibble(0x2);
+   947     07A0  3002               	movlw	2
+   948     07A1  00F7               	movwf	nibble@dado
+   949     07A2  3000               	movlw	0
+   950     07A3  00F8               	movwf	nibble@dado+1
+   951     07A4  120A  118A  26C8  120A  118A  	fcall	_nibble
+   952     07A9                     l808:
+   953                           
+   954                           ;bibliotec_lcd.c: 62:     enable();
+   955     07A9  120A  118A  258E  120A  118A  	fcall	_enable
+   956     07AE                     l810:
+   957                           
+   958                           ;bibliotec_lcd.c: 64:     byte(0, 0x28);
+   959     07AE  3000               	movlw	0
+   960     07AF  00FB               	movwf	byte@escreve
+   961     07B0  00FC               	movwf	byte@escreve+1
+   962     07B1  3028               	movlw	40
+   963     07B2  00FD               	movwf	byte@dado
+   964     07B3  120A  118A  263D  120A  118A  	fcall	_byte
+   965     07B8                     l812:
+   966                           
+   967                           ;bibliotec_lcd.c: 65:     byte(0, 0x0C);
+   968     07B8  3000               	movlw	0
+   969     07B9  00FB               	movwf	byte@escreve
+   970     07BA  00FC               	movwf	byte@escreve+1
+   971     07BB  300C               	movlw	12
+   972     07BC  00FD               	movwf	byte@dado
+   973     07BD  120A  118A  263D  120A  118A  	fcall	_byte
+   974     07C2                     l814:
+   975                           
+   976                           ;bibliotec_lcd.c: 66:     byte(0, 0x06);
+   977     07C2  3000               	movlw	0
+   978     07C3  00FB               	movwf	byte@escreve
+   979     07C4  00FC               	movwf	byte@escreve+1
+   980     07C5  3006               	movlw	6
+   981     07C6  00FD               	movwf	byte@dado
+   982     07C7  120A  118A  263D  120A  118A  	fcall	_byte
+   983     07CC                     l816:
+   984                           
+   985                           ;bibliotec_lcd.c: 67:     byte(0, 0x01);
+   986     07CC  3000               	movlw	0
+   987     07CD  00FB               	movwf	byte@escreve
+   988     07CE  00FC               	movwf	byte@escreve+1
+   989     07CF  01FD               	clrf	byte@dado
+   990     07D0  0AFD               	incf	byte@dado,f
+   991     07D1  120A  118A  263D  120A  118A  	fcall	_byte
+   992     07D6                     l818:
+   993                           
+   994                           ;bibliotec_lcd.c: 69:     _delay((unsigned long)((5)*(4000000/4000.0)));
+   995     07D6  3007               	movlw	7
+   996     07D7  1283               	bcf	3,5	;RP0=0, select bank0
+   997     07D8  1303               	bcf	3,6	;RP1=0, select bank0
+   998     07D9  00C4               	movwf	??_lcd_init+1
+   999     07DA  307C               	movlw	124
+  1000     07DB  00C3               	movwf	??_lcd_init
+  1001     07DC                     u227:
+  1002     07DC  0BC3               	decfsz	??_lcd_init,f
+  1003     07DD  2FDC               	goto	u227
+  1004     07DE  0BC4               	decfsz	??_lcd_init+1,f
+  1005     07DF  2FDC               	goto	u227
+  1006     07E0  0000               	nop
+  1007     07E1                     l65:
+  1008     07E1  0008               	return
+  1009     07E2                     __end_of_lcd_init:
+  1010                           
+  1011                           	psect	text3
+  1012     05C3                     __ptext3:	
+  1013 ;; *************** function _grava_caractere *****************
+  1014 ;; Defined at:
+  1015 ;;		line 102 in file "bibliotec_lcd.c"
+  1016 ;; Parameters:    Size  Location     Type
+  1017 ;;  pos             1    wreg     unsigned char 
+  1018 ;;  linhas          1    3[BANK0 ] PTR unsigned char 
+  1019 ;;		 -> robo(8), 
+  1020 ;; Auto vars:     Size  Location     Type
+  1021 ;;  pos             1    0[COMMON] unsigned char 
+  1022 ;;  i               2    5[BANK0 ] int 
+  1023 ;; Return value:  Size  Location     Type
+  1024 ;;                  1    wreg      void 
+  1025 ;; Registers used:
+  1026 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+  1027 ;; Tracked objects:
+  1028 ;;		On entry : 0/0
+  1029 ;;		On exit  : 0/0
+  1030 ;;		Unchanged: 0/0
+  1031 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1032 ;;      Params:         0       1       0       0       0
+  1033 ;;      Locals:         0       2       0       0       0
+  1034 ;;      Temps:          0       1       0       0       0
+  1035 ;;      Totals:         0       4       0       0       0
+  1036 ;;Total ram usage:        4 bytes
+  1037 ;; Hardware stack levels used: 1
+  1038 ;; Hardware stack levels required when called: 3
+  1039 ;; This function calls:
+  1040 ;;		_byte
+  1041 ;; This function is called by:
+  1042 ;;		_main
+  1043 ;; This function uses a non-reentrant model
+  1044 ;;
+  1045                           
+  1046     05C3                     _grava_caractere:	
+  1047                           ;psect for function _grava_caractere
+  1048                           
+  1049     05C3                     l832:	
+  1050                           ;incstack = 0
+  1051                           ; Regs used in _grava_caractere: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+  1052                           
+  1053                           
+  1054                           ;bibliotec_lcd.c: 102: void grava_caractere (char pos, char *linhas);bibliotec_lcd.c: 10
+      +                          3: {;bibliotec_lcd.c: 104:     byte(0, 0x40);
+  1055     05C3  3000               	movlw	0
+  1056     05C4  00FB               	movwf	byte@escreve
+  1057     05C5  00FC               	movwf	byte@escreve+1
+  1058     05C6  3040               	movlw	64
+  1059     05C7  00FD               	movwf	byte@dado
+  1060     05C8  120A  118A  263D  120A  118A  	fcall	_byte
+  1061     05CD                     l834:
+  1062                           
+  1063                           ;bibliotec_lcd.c: 105:     for (int i=0; i<8; i++)
+  1064     05CD  1283               	bcf	3,5	;RP0=0, select bank0
+  1065     05CE  1303               	bcf	3,6	;RP1=0, select bank0
+  1066     05CF  01C5               	clrf	grava_caractere@i
+  1067     05D0  01C6               	clrf	grava_caractere@i+1
+  1068     05D1                     l840:
+  1069                           
+  1070                           ;bibliotec_lcd.c: 106:     {;bibliotec_lcd.c: 107:         byte(1, linhas[i]);
+  1071     05D1  3001               	movlw	1
+  1072     05D2  00FB               	movwf	byte@escreve
+  1073     05D3  3000               	movlw	0
+  1074     05D4  00FC               	movwf	byte@escreve+1
+  1075     05D5  1283               	bcf	3,5	;RP0=0, select bank0
+  1076     05D6  1303               	bcf	3,6	;RP1=0, select bank0
+  1077     05D7  0845               	movf	grava_caractere@i,w
+  1078     05D8  0743               	addwf	grava_caractere@linhas,w
+  1079     05D9  00C4               	movwf	??_grava_caractere
+  1080     05DA  0844               	movf	??_grava_caractere,w
+  1081     05DB  0084               	movwf	4
+  1082     05DC  1383               	bcf	3,7	;select IRP bank0
+  1083     05DD  0800               	movf	0,w
+  1084     05DE  00FD               	movwf	byte@dado
+  1085     05DF  120A  118A  263D  120A  118A  	fcall	_byte
+  1086     05E4                     l842:
+  1087                           
+  1088                           ;bibliotec_lcd.c: 108:     }
+  1089     05E4  3001               	movlw	1
+  1090     05E5  1283               	bcf	3,5	;RP0=0, select bank0
+  1091     05E6  1303               	bcf	3,6	;RP1=0, select bank0
+  1092     05E7  07C5               	addwf	grava_caractere@i,f
+  1093     05E8  1803               	skipnc
+  1094     05E9  0AC6               	incf	grava_caractere@i+1,f
+  1095     05EA  3000               	movlw	0
+  1096     05EB  07C6               	addwf	grava_caractere@i+1,f
+  1097     05EC                     l844:
+  1098     05EC  0846               	movf	grava_caractere@i+1,w
+  1099     05ED  3A80               	xorlw	128
+  1100     05EE  00FF               	movwf	btemp+1
+  1101     05EF  3080               	movlw	128
+  1102     05F0  027F               	subwf	btemp+1,w
+  1103     05F1  1D03               	skipz
+  1104     05F2  2DF5               	goto	u175
+  1105     05F3  3008               	movlw	8
+  1106     05F4  0245               	subwf	grava_caractere@i,w
+  1107     05F5                     u175:
+  1108     05F5  1C03               	skipc
+  1109     05F6  2DF8               	goto	u171
+  1110     05F7  2DF9               	goto	u170
+  1111     05F8                     u171:
+  1112     05F8  2DD1               	goto	l840
+  1113     05F9                     u170:
+  1114     05F9                     l91:
+  1115     05F9  0008               	return
+  1116     05FA                     __end_of_grava_caractere:
+  1117                           
+  1118                           	psect	text4
+  1119     0682                     __ptext4:	
+  1120 ;; *************** function _escreve *****************
+  1121 ;; Defined at:
+  1122 ;;		line 81 in file "bibliotec_lcd.c"
+  1123 ;; Parameters:    Size  Location     Type
+  1124 ;;  lin             1    wreg     unsigned char 
+  1125 ;;  col             1    3[BANK0 ] unsigned char 
+  1126 ;;  str             1    4[BANK0 ] PTR unsigned char 
+  1127 ;;		 -> STR_1(9), 
+  1128 ;; Auto vars:     Size  Location     Type
+  1129 ;;  lin             1    5[BANK0 ] unsigned char 
+  1130 ;; Return value:  Size  Location     Type
+  1131 ;;                  1    wreg      void 
+  1132 ;; Registers used:
+  1133 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+  1134 ;; Tracked objects:
+  1135 ;;		On entry : 0/0
+  1136 ;;		On exit  : 0/0
+  1137 ;;		Unchanged: 0/0
+  1138 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1139 ;;      Params:         0       2       0       0       0
+  1140 ;;      Locals:         0       1       0       0       0
+  1141 ;;      Temps:          0       0       0       0       0
+  1142 ;;      Totals:         0       3       0       0       0
+  1143 ;;Total ram usage:        3 bytes
+  1144 ;; Hardware stack levels used: 1
+  1145 ;; Hardware stack levels required when called: 3
+  1146 ;; This function calls:
+  1147 ;;		_byte
+  1148 ;; This function is called by:
+  1149 ;;		_main
+  1150 ;; This function uses a non-reentrant model
+  1151 ;;
+  1152                           
+  1153     0682                     _escreve:	
+  1154                           ;psect for function _escreve
+  1155                           
+  1156                           
+  1157                           ;incstack = 0
+  1158                           ; Regs used in _escreve: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+  1159                           ;escreve@lin stored from wreg
+  1160     0682  1283               	bcf	3,5	;RP0=0, select bank0
+  1161     0683  1303               	bcf	3,6	;RP1=0, select bank0
+  1162     0684  00C5               	movwf	escreve@lin
+  1163     0685                     l820:
+  1164                           
+  1165                           ;bibliotec_lcd.c: 81: void escreve(char lin, char col, char *str);bibliotec_lcd.c: 82: {
+      +                          ;bibliotec_lcd.c: 83:     if(lin == 1)byte(0,0x80 + col);
+  1166     0685  0345               	decf	escreve@lin,w
+  1167     0686  1D03               	btfss	3,2
+  1168     0687  2E89               	goto	u151
+  1169     0688  2E8A               	goto	u150
+  1170     0689                     u151:
+  1171     0689  2E96               	goto	l824
+  1172     068A                     u150:
+  1173     068A                     l822:
+  1174     068A  3000               	movlw	0
+  1175     068B  00FB               	movwf	byte@escreve
+  1176     068C  00FC               	movwf	byte@escreve+1
+  1177     068D  0843               	movf	escreve@col,w
+  1178     068E  3E80               	addlw	128
+  1179     068F  00FD               	movwf	byte@dado
+  1180     0690  120A  118A  263D  120A  118A  	fcall	_byte
+  1181     0695  2EB9               	goto	l830
+  1182     0696                     l824:
+  1183     0696  3000               	movlw	0
+  1184     0697  00FB               	movwf	byte@escreve
+  1185     0698  00FC               	movwf	byte@escreve+1
+  1186     0699  0843               	movf	escreve@col,w
+  1187     069A  3EC0               	addlw	192
+  1188     069B  00FD               	movwf	byte@dado
+  1189     069C  120A  118A  263D  120A  118A  	fcall	_byte
+  1190     06A1  2EB9               	goto	l830
+  1191     06A2                     l826:
+  1192                           
+  1193                           ;bibliotec_lcd.c: 86:     {;bibliotec_lcd.c: 87:         byte(1, *str++);
+  1194     06A2  3001               	movlw	1
+  1195     06A3  00FB               	movwf	byte@escreve
+  1196     06A4  3000               	movlw	0
+  1197     06A5  00FC               	movwf	byte@escreve+1
+  1198     06A6  0844               	movf	escreve@str,w
+  1199     06A7  0084               	movwf	4
+  1200     06A8  120A  118A  2003  120A  118A  	fcall	stringdir
+  1201     06AD  00FD               	movwf	byte@dado
+  1202     06AE  120A  118A  263D  120A  118A  	fcall	_byte
+  1203     06B3                     l828:
+  1204     06B3  3001               	movlw	1
+  1205     06B4  00FF               	movwf	btemp+1
+  1206     06B5  087F               	movf	btemp+1,w
+  1207     06B6  1283               	bcf	3,5	;RP0=0, select bank0
+  1208     06B7  1303               	bcf	3,6	;RP1=0, select bank0
+  1209     06B8  07C4               	addwf	escreve@str,f
+  1210     06B9                     l830:
+  1211                           
+  1212                           ;bibliotec_lcd.c: 85:     while (*str)
+  1213     06B9  1283               	bcf	3,5	;RP0=0, select bank0
+  1214     06BA  1303               	bcf	3,6	;RP1=0, select bank0
+  1215     06BB  0844               	movf	escreve@str,w
+  1216     06BC  0084               	movwf	4
+  1217     06BD  120A  118A  2003  120A  118A  	fcall	stringdir
+  1218     06C2  3A00               	xorlw	0
+  1219     06C3  1D03               	skipz
+  1220     06C4  2EC6               	goto	u161
+  1221     06C5  2EC7               	goto	u160
+  1222     06C6                     u161:
+  1223     06C6  2EA2               	goto	l826
+  1224     06C7                     u160:
+  1225     06C7                     l76:
+  1226     06C7  0008               	return
+  1227     06C8                     __end_of_escreve:
+  1228                           
+  1229                           	psect	text5
+  1230     063D                     __ptext5:	
+  1231 ;; *************** function _byte *****************
+  1232 ;; Defined at:
+  1233 ;;		line 37 in file "bibliotec_lcd.c"
+  1234 ;; Parameters:    Size  Location     Type
+  1235 ;;  escreve         2   11[COMMON] int 
+  1236 ;;  dado            1   13[COMMON] unsigned char 
+  1237 ;; Auto vars:     Size  Location     Type
+  1238 ;;		None
+  1239 ;; Return value:  Size  Location     Type
+  1240 ;;                  1    wreg      void 
+  1241 ;; Registers used:
+  1242 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+  1243 ;; Tracked objects:
+  1244 ;;		On entry : 0/0
+  1245 ;;		On exit  : 0/0
+  1246 ;;		Unchanged: 0/0
+  1247 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1248 ;;      Params:         3       0       0       0       0
+  1249 ;;      Locals:         0       0       0       0       0
+  1250 ;;      Temps:          0       3       0       0       0
+  1251 ;;      Totals:         3       3       0       0       0
+  1252 ;;Total ram usage:        6 bytes
+  1253 ;; Hardware stack levels used: 1
+  1254 ;; Hardware stack levels required when called: 2
+  1255 ;; This function calls:
+  1256 ;;		_enable
+  1257 ;;		_muda_pin
+  1258 ;;		_nibble
+  1259 ;; This function is called by:
+  1260 ;;		_lcd_init
+  1261 ;;		_escreve
+  1262 ;;		_grava_caractere
+  1263 ;;		_usa_caractere
+  1264 ;;		_limpa
+  1265 ;;		_desloca
+  1266 ;; This function uses a non-reentrant model
+  1267 ;;
+  1268                           
+  1269     063D                     _byte:	
+  1270                           ;psect for function _byte
+  1271                           
+  1272     063D                     l800:	
+  1273                           ;incstack = 0
+  1274                           ; Regs used in _byte: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+  1275                           
+  1276                           
+  1277                           ;bibliotec_lcd.c: 37: void byte (int escreve, char dado);bibliotec_lcd.c: 38: {;bibliote
+      +                          c_lcd.c: 39:     muda_pin(port_rs, RS, escreve & 0x01);
+  1278     063D  1283               	bcf	3,5	;RP0=0, select bank0
+  1279     063E  1303               	bcf	3,6	;RP1=0, select bank0
+  1280     063F  084B               	movf	_port_rs,w
+  1281     0640  00F0               	movwf	muda_pin@_port
+  1282     0641  084C               	movf	_port_rs+1,w
+  1283     0642  00F1               	movwf	muda_pin@_port+1
+  1284     0643  083F               	movf	_RS+1,w	;volatile
+  1285     0644  00F3               	movwf	muda_pin@_pin+1
+  1286     0645  083E               	movf	_RS,w	;volatile
+  1287     0646  00F2               	movwf	muda_pin@_pin
+  1288     0647  3001               	movlw	1
+  1289     0648  057B               	andwf	byte@escreve,w
+  1290     0649  00F4               	movwf	muda_pin@_val
+  1291     064A  3000               	movlw	0
+  1292     064B  057C               	andwf	byte@escreve+1,w
+  1293     064C  00F5               	movwf	muda_pin@_val+1
+  1294     064D  120A  118A  2534  120A  118A  	fcall	_muda_pin
+  1295                           
+  1296                           ;bibliotec_lcd.c: 41:     nibble(dado >> 4);
+  1297     0652  087D               	movf	byte@dado,w
+  1298     0653  1283               	bcf	3,5	;RP0=0, select bank0
+  1299     0654  1303               	bcf	3,6	;RP1=0, select bank0
+  1300     0655  00C0               	movwf	??_byte
+  1301     0656  3004               	movlw	4
+  1302     0657                     u145:
+  1303     0657  1003               	clrc
+  1304     0658  0CC0               	rrf	??_byte,f
+  1305     0659  3EFF               	addlw	-1
+  1306     065A  1D03               	skipz
+  1307     065B  2E57               	goto	u145
+  1308     065C  0840               	movf	??_byte,w
+  1309     065D  00C1               	movwf	??_byte+1
+  1310     065E  01C2               	clrf	??_byte+2
+  1311     065F  0841               	movf	??_byte+1,w
+  1312     0660  00F7               	movwf	nibble@dado
+  1313     0661  0842               	movf	??_byte+2,w
+  1314     0662  00F8               	movwf	nibble@dado+1
+  1315     0663  120A  118A  26C8  120A  118A  	fcall	_nibble
+  1316                           
+  1317                           ;bibliotec_lcd.c: 42:     enable();
+  1318     0668  120A  118A  258E  120A  118A  	fcall	_enable
+  1319                           
+  1320                           ;bibliotec_lcd.c: 43:     nibble(dado & 0x0F);
+  1321     066D  087D               	movf	byte@dado,w
+  1322     066E  390F               	andlw	15
+  1323     066F  1283               	bcf	3,5	;RP0=0, select bank0
+  1324     0670  1303               	bcf	3,6	;RP1=0, select bank0
+  1325     0671  00C0               	movwf	??_byte
+  1326     0672  01C1               	clrf	??_byte+1
+  1327     0673  0840               	movf	??_byte,w
+  1328     0674  00F7               	movwf	nibble@dado
+  1329     0675  0841               	movf	??_byte+1,w
+  1330     0676  00F8               	movwf	nibble@dado+1
+  1331     0677  120A  118A  26C8  120A  118A  	fcall	_nibble
+  1332                           
+  1333                           ;bibliotec_lcd.c: 44:     enable();
+  1334     067C  120A  118A  258E  120A  118A  	fcall	_enable
+  1335     0681                     l62:
+  1336     0681  0008               	return
+  1337     0682                     __end_of_byte:
+  1338                           
+  1339                           	psect	text6
+  1340     06C8                     __ptext6:	
+  1341 ;; *************** function _nibble *****************
+  1342 ;; Defined at:
+  1343 ;;		line 28 in file "bibliotec_lcd.c"
+  1344 ;; Parameters:    Size  Location     Type
+  1345 ;;  dado            2    7[COMMON] int 
+  1346 ;; Auto vars:     Size  Location     Type
+  1347 ;;		None
+  1348 ;; Return value:  Size  Location     Type
+  1349 ;;                  1    wreg      void 
+  1350 ;; Registers used:
+  1351 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+  1352 ;; Tracked objects:
+  1353 ;;		On entry : 0/0
+  1354 ;;		On exit  : 0/0
+  1355 ;;		Unchanged: 0/0
+  1356 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1357 ;;      Params:         2       0       0       0       0
+  1358 ;;      Locals:         0       0       0       0       0
+  1359 ;;      Temps:          2       0       0       0       0
+  1360 ;;      Totals:         4       0       0       0       0
+  1361 ;;Total ram usage:        4 bytes
+  1362 ;; Hardware stack levels used: 1
+  1363 ;; Hardware stack levels required when called: 1
+  1364 ;; This function calls:
+  1365 ;;		_muda_pin
+  1366 ;; This function is called by:
+  1367 ;;		_byte
+  1368 ;;		_lcd_init
+  1369 ;; This function uses a non-reentrant model
+  1370 ;;
+  1371                           
+  1372     06C8                     _nibble:	
+  1373                           ;psect for function _nibble
+  1374                           
+  1375     06C8                     l798:	
+  1376                           ;incstack = 0
+  1377                           ; Regs used in _nibble: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+  1378                           
+  1379                           
+  1380                           ;bibliotec_lcd.c: 28: void nibble(int dado);bibliotec_lcd.c: 29: {;bibliotec_lcd.c: 30: 
+      +                              muda_pin(port_data, D4, dado & 0x01);
+  1381     06C8  1283               	bcf	3,5	;RP0=0, select bank0
+  1382     06C9  1303               	bcf	3,6	;RP1=0, select bank0
+  1383     06CA  0847               	movf	_port_data,w
+  1384     06CB  00F0               	movwf	muda_pin@_port
+  1385     06CC  0848               	movf	_port_data+1,w
+  1386     06CD  00F1               	movwf	muda_pin@_port+1
+  1387     06CE  083B               	movf	_D4+1,w	;volatile
+  1388     06CF  00F3               	movwf	muda_pin@_pin+1
+  1389     06D0  083A               	movf	_D4,w	;volatile
+  1390     06D1  00F2               	movwf	muda_pin@_pin
+  1391     06D2  3001               	movlw	1
+  1392     06D3  0577               	andwf	nibble@dado,w
+  1393     06D4  00F4               	movwf	muda_pin@_val
+  1394     06D5  3000               	movlw	0
+  1395     06D6  0578               	andwf	nibble@dado+1,w
+  1396     06D7  00F5               	movwf	muda_pin@_val+1
+  1397     06D8  120A  118A  2534  120A  118A  	fcall	_muda_pin
+  1398                           
+  1399                           ;bibliotec_lcd.c: 31:     muda_pin(port_data, D5, dado >> 1 & 0x01);
+  1400     06DD  1283               	bcf	3,5	;RP0=0, select bank0
+  1401     06DE  1303               	bcf	3,6	;RP1=0, select bank0
+  1402     06DF  0847               	movf	_port_data,w
+  1403     06E0  00F0               	movwf	muda_pin@_port
+  1404     06E1  0848               	movf	_port_data+1,w
+  1405     06E2  00F1               	movwf	muda_pin@_port+1
+  1406     06E3  0839               	movf	_D5+1,w	;volatile
+  1407     06E4  00F3               	movwf	muda_pin@_pin+1
+  1408     06E5  0838               	movf	_D5,w	;volatile
+  1409     06E6  00F2               	movwf	muda_pin@_pin
+  1410     06E7  0878               	movf	nibble@dado+1,w
+  1411     06E8  00FA               	movwf	??_nibble+1
+  1412     06E9  0877               	movf	nibble@dado,w
+  1413     06EA  00F9               	movwf	??_nibble
+  1414     06EB  0D7A               	rlf	??_nibble+1,w
+  1415     06EC  0CFA               	rrf	??_nibble+1,f
+  1416     06ED  0CF9               	rrf	??_nibble,f
+  1417     06EE  3001               	movlw	1
+  1418     06EF  0579               	andwf	??_nibble,w
+  1419     06F0  00F4               	movwf	muda_pin@_val
+  1420     06F1  3000               	movlw	0
+  1421     06F2  057A               	andwf	??_nibble+1,w
+  1422     06F3  00F5               	movwf	muda_pin@_val+1
+  1423     06F4  120A  118A  2534  120A  118A  	fcall	_muda_pin
+  1424                           
+  1425                           ;bibliotec_lcd.c: 32:     muda_pin(port_data, D6, dado >> 2 & 0x01);
+  1426     06F9  1283               	bcf	3,5	;RP0=0, select bank0
+  1427     06FA  1303               	bcf	3,6	;RP1=0, select bank0
+  1428     06FB  0847               	movf	_port_data,w
+  1429     06FC  00F0               	movwf	muda_pin@_port
+  1430     06FD  0848               	movf	_port_data+1,w
+  1431     06FE  00F1               	movwf	muda_pin@_port+1
+  1432     06FF  0837               	movf	_D6+1,w	;volatile
+  1433     0700  00F3               	movwf	muda_pin@_pin+1
+  1434     0701  0836               	movf	_D6,w	;volatile
+  1435     0702  00F2               	movwf	muda_pin@_pin
+  1436     0703  0878               	movf	nibble@dado+1,w
+  1437     0704  00FA               	movwf	??_nibble+1
+  1438     0705  0877               	movf	nibble@dado,w
+  1439     0706  00F9               	movwf	??_nibble
+  1440     0707  0D7A               	rlf	??_nibble+1,w
+  1441     0708  0CFA               	rrf	??_nibble+1,f
+  1442     0709  0CF9               	rrf	??_nibble,f
+  1443     070A  0D7A               	rlf	??_nibble+1,w
+  1444     070B  0CFA               	rrf	??_nibble+1,f
+  1445     070C  0CF9               	rrf	??_nibble,f
+  1446     070D  3001               	movlw	1
+  1447     070E  0579               	andwf	??_nibble,w
+  1448     070F  00F4               	movwf	muda_pin@_val
+  1449     0710  3000               	movlw	0
+  1450     0711  057A               	andwf	??_nibble+1,w
+  1451     0712  00F5               	movwf	muda_pin@_val+1
+  1452     0713  120A  118A  2534  120A  118A  	fcall	_muda_pin
+  1453                           
+  1454                           ;bibliotec_lcd.c: 33:     muda_pin(port_data, D7, dado >> 3 & 0x01);
+  1455     0718  1283               	bcf	3,5	;RP0=0, select bank0
+  1456     0719  1303               	bcf	3,6	;RP1=0, select bank0
+  1457     071A  0847               	movf	_port_data,w
+  1458     071B  00F0               	movwf	muda_pin@_port
+  1459     071C  0848               	movf	_port_data+1,w
+  1460     071D  00F1               	movwf	muda_pin@_port+1
+  1461     071E  0835               	movf	_D7+1,w	;volatile
+  1462     071F  00F3               	movwf	muda_pin@_pin+1
+  1463     0720  0834               	movf	_D7,w	;volatile
+  1464     0721  00F2               	movwf	muda_pin@_pin
+  1465     0722  0878               	movf	nibble@dado+1,w
+  1466     0723  00FA               	movwf	??_nibble+1
+  1467     0724  0877               	movf	nibble@dado,w
+  1468     0725  00F9               	movwf	??_nibble
+  1469     0726  0D7A               	rlf	??_nibble+1,w
+  1470     0727  0CFA               	rrf	??_nibble+1,f
+  1471     0728  0CF9               	rrf	??_nibble,f
+  1472     0729  0D7A               	rlf	??_nibble+1,w
+  1473     072A  0CFA               	rrf	??_nibble+1,f
+  1474     072B  0CF9               	rrf	??_nibble,f
+  1475     072C  0D7A               	rlf	??_nibble+1,w
+  1476     072D  0CFA               	rrf	??_nibble+1,f
+  1477     072E  0CF9               	rrf	??_nibble,f
+  1478     072F  3001               	movlw	1
+  1479     0730  0579               	andwf	??_nibble,w
+  1480     0731  00F4               	movwf	muda_pin@_val
+  1481     0732  3000               	movlw	0
+  1482     0733  057A               	andwf	??_nibble+1,w
+  1483     0734  00F5               	movwf	muda_pin@_val+1
+  1484     0735  120A  118A  2534  120A  118A  	fcall	_muda_pin
+  1485     073A                     l59:
+  1486     073A  0008               	return
+  1487     073B                     __end_of_nibble:
+  1488                           
+  1489                           	psect	text7
+  1490     058E                     __ptext7:	
+  1491 ;; *************** function _enable *****************
+  1492 ;; Defined at:
+  1493 ;;		line 20 in file "bibliotec_lcd.c"
+  1494 ;; Parameters:    Size  Location     Type
+  1495 ;;		None
+  1496 ;; Auto vars:     Size  Location     Type
+  1497 ;;		None
+  1498 ;; Return value:  Size  Location     Type
+  1499 ;;                  1    wreg      void 
+  1500 ;; Registers used:
+  1501 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+  1502 ;; Tracked objects:
+  1503 ;;		On entry : 0/0
+  1504 ;;		On exit  : 0/0
+  1505 ;;		Unchanged: 0/0
+  1506 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1507 ;;      Params:         0       0       0       0       0
+  1508 ;;      Locals:         0       0       0       0       0
+  1509 ;;      Temps:          2       0       0       0       0
+  1510 ;;      Totals:         2       0       0       0       0
+  1511 ;;Total ram usage:        2 bytes
+  1512 ;; Hardware stack levels used: 1
+  1513 ;; Hardware stack levels required when called: 1
+  1514 ;; This function calls:
+  1515 ;;		_muda_pin
+  1516 ;; This function is called by:
+  1517 ;;		_byte
+  1518 ;;		_lcd_init
+  1519 ;; This function uses a non-reentrant model
+  1520 ;;
+  1521                           
+  1522     058E                     _enable:	
+  1523                           ;psect for function _enable
+  1524                           
+  1525     058E                     l792:	
+  1526                           ;incstack = 0
+  1527                           ; Regs used in _enable: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+  1528                           
+  1529                           
+  1530                           ;bibliotec_lcd.c: 22:     muda_pin(port_en, EN, 1);
+  1531     058E  1283               	bcf	3,5	;RP0=0, select bank0
+  1532     058F  1303               	bcf	3,6	;RP1=0, select bank0
+  1533     0590  0849               	movf	_port_en,w
+  1534     0591  00F0               	movwf	muda_pin@_port
+  1535     0592  084A               	movf	_port_en+1,w
+  1536     0593  00F1               	movwf	muda_pin@_port+1
+  1537     0594  083D               	movf	_EN+1,w	;volatile
+  1538     0595  00F3               	movwf	muda_pin@_pin+1
+  1539     0596  083C               	movf	_EN,w	;volatile
+  1540     0597  00F2               	movwf	muda_pin@_pin
+  1541     0598  3001               	movlw	1
+  1542     0599  00F4               	movwf	muda_pin@_val
+  1543     059A  3000               	movlw	0
+  1544     059B  00F5               	movwf	muda_pin@_val+1
+  1545     059C  120A  118A  2534  120A  118A  	fcall	_muda_pin
+  1546     05A1                     l794:
+  1547                           
+  1548                           ;bibliotec_lcd.c: 23:     _delay((unsigned long)((5)*(4000000/4000.0)));
+  1549     05A1  3007               	movlw	7
+  1550     05A2  00F8               	movwf	??_enable+1
+  1551     05A3  307D               	movlw	125
+  1552     05A4  00F7               	movwf	??_enable
+  1553     05A5                     u237:
+  1554     05A5  0BF7               	decfsz	??_enable,f
+  1555     05A6  2DA5               	goto	u237
+  1556     05A7  0BF8               	decfsz	??_enable+1,f
+  1557     05A8  2DA5               	goto	u237
+  1558     05A9                     l796:
+  1559                           
+  1560                           ;bibliotec_lcd.c: 24:     muda_pin(port_en, EN, 0);
+  1561     05A9  1283               	bcf	3,5	;RP0=0, select bank0
+  1562     05AA  1303               	bcf	3,6	;RP1=0, select bank0
+  1563     05AB  0849               	movf	_port_en,w
+  1564     05AC  00F0               	movwf	muda_pin@_port
+  1565     05AD  084A               	movf	_port_en+1,w
+  1566     05AE  00F1               	movwf	muda_pin@_port+1
+  1567     05AF  083D               	movf	_EN+1,w	;volatile
+  1568     05B0  00F3               	movwf	muda_pin@_pin+1
+  1569     05B1  083C               	movf	_EN,w	;volatile
+  1570     05B2  00F2               	movwf	muda_pin@_pin
+  1571     05B3  3000               	movlw	0
+  1572     05B4  00F4               	movwf	muda_pin@_val
+  1573     05B5  00F5               	movwf	muda_pin@_val+1
+  1574     05B6  120A  118A  2534  120A  118A  	fcall	_muda_pin
+  1575                           
+  1576                           ;bibliotec_lcd.c: 25:     _delay((unsigned long)((1)*(4000000/4000.0)));
+  1577     05BB  30C7               	movlw	199
+  1578     05BC  00F7               	movwf	??_enable
+  1579     05BD                     u247:
+  1580     05BD  2DBE               	nop2
+  1581     05BE  0BF7               	decfsz	??_enable,f
+  1582     05BF  2DBD               	goto	u247
+  1583     05C0  2DC1               	nop2
+  1584     05C1  2DC2               	nop2
+  1585     05C2                     l56:
+  1586     05C2  0008               	return
+  1587     05C3                     __end_of_enable:
+  1588                           
+  1589                           	psect	text8
+  1590     0534                     __ptext8:	
+  1591 ;; *************** function _muda_pin *****************
+  1592 ;; Defined at:
+  1593 ;;		line 7 in file "bibliotec_lcd.c"
+  1594 ;; Parameters:    Size  Location     Type
+  1595 ;;  _port           2    0[COMMON] PTR volatile unsigned ch
+  1596 ;;		 -> NULL(0), PORTD(1), PORTC(1), 
+  1597 ;;  _pin            2    2[COMMON] int 
+  1598 ;;  _val            2    4[COMMON] int 
+  1599 ;; Auto vars:     Size  Location     Type
+  1600 ;;		None
+  1601 ;; Return value:  Size  Location     Type
+  1602 ;;                  1    wreg      void 
+  1603 ;; Registers used:
+  1604 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1
+  1605 ;; Tracked objects:
+  1606 ;;		On entry : 0/0
+  1607 ;;		On exit  : 0/0
+  1608 ;;		Unchanged: 0/0
+  1609 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1610 ;;      Params:         6       0       0       0       0
+  1611 ;;      Locals:         0       0       0       0       0
+  1612 ;;      Temps:          1       0       0       0       0
+  1613 ;;      Totals:         7       0       0       0       0
+  1614 ;;Total ram usage:        7 bytes
+  1615 ;; Hardware stack levels used: 1
+  1616 ;; This function calls:
+  1617 ;;		Nothing
+  1618 ;; This function is called by:
+  1619 ;;		_enable
+  1620 ;;		_nibble
+  1621 ;;		_byte
+  1622 ;; This function uses a non-reentrant model
+  1623 ;;
+  1624                           
+  1625     0534                     _muda_pin:	
+  1626                           ;psect for function _muda_pin
+  1627                           
+  1628     0534                     l786:	
+  1629                           ;incstack = 0
+  1630                           ; Regs used in _muda_pin: [wreg-fsr0h+status,2+status,0+btemp+1]
+  1631                           
+  1632                           
+  1633                           ;bibliotec_lcd.c: 7: void muda_pin(volatile unsigned char *_port, int _pin, int _val);bi
+      +                          bliotec_lcd.c: 8: {;bibliotec_lcd.c: 9:     if(_val == 1)
+  1634     0534  0374               	decf	muda_pin@_val,w
+  1635     0535  0475               	iorwf	muda_pin@_val+1,w
+  1636     0536  1D03               	btfss	3,2
+  1637     0537  2D39               	goto	u111
+  1638     0538  2D3A               	goto	u110
+  1639     0539                     u111:
+  1640     0539  2D4D               	goto	l790
+  1641     053A                     u110:
+  1642     053A                     l788:
+  1643                           
+  1644                           ;bibliotec_lcd.c: 10:     {;bibliotec_lcd.c: 11:         *_port |= 1 << _pin;
+  1645     053A  3001               	movlw	1
+  1646     053B  00F6               	movwf	??_muda_pin
+  1647     053C  0A72               	incf	muda_pin@_pin,w
+  1648     053D  2D40               	goto	u124
+  1649     053E                     u125:
+  1650     053E  1003               	clrc
+  1651     053F  0DF6               	rlf	??_muda_pin,f
+  1652     0540                     u124:
+  1653     0540  3EFF               	addlw	-1
+  1654     0541  1D03               	skipz
+  1655     0542  2D3E               	goto	u125
+  1656     0543  0876               	movf	??_muda_pin,w
+  1657     0544  00FF               	movwf	btemp+1
+  1658     0545  0870               	movf	muda_pin@_port,w
+  1659     0546  0084               	movwf	4
+  1660     0547  1783               	bsf	3,7
+  1661     0548  1C71               	btfss	muda_pin@_port+1,0
+  1662     0549  1383               	bcf	3,7
+  1663     054A  087F               	movf	btemp+1,w
+  1664     054B  0480               	iorwf	0,f
+  1665                           
+  1666                           ;bibliotec_lcd.c: 12:     }
+  1667     054C  2D60               	goto	l53
+  1668     054D                     l790:
+  1669                           
+  1670                           ;bibliotec_lcd.c: 14:     {;bibliotec_lcd.c: 15:         *_port &= ~(1 << _pin);
+  1671     054D  3001               	movlw	1
+  1672     054E  00F6               	movwf	??_muda_pin
+  1673     054F  0A72               	incf	muda_pin@_pin,w
+  1674     0550  2D53               	goto	u134
+  1675     0551                     u135:
+  1676     0551  1003               	clrc
+  1677     0552  0DF6               	rlf	??_muda_pin,f
+  1678     0553                     u134:
+  1679     0553  3EFF               	addlw	-1
+  1680     0554  1D03               	skipz
+  1681     0555  2D51               	goto	u135
+  1682     0556  0876               	movf	??_muda_pin,w
+  1683     0557  3AFF               	xorlw	255
+  1684     0558  00FF               	movwf	btemp+1
+  1685     0559  0870               	movf	muda_pin@_port,w
+  1686     055A  0084               	movwf	4
+  1687     055B  1783               	bsf	3,7
+  1688     055C  1C71               	btfss	muda_pin@_port+1,0
+  1689     055D  1383               	bcf	3,7
+  1690     055E  087F               	movf	btemp+1,w
+  1691     055F  0580               	andwf	0,f
+  1692     0560                     l53:
+  1693     0560  0008               	return
+  1694     0561                     __end_of_muda_pin:
+  1695     007E                     btemp	set	126	;btemp
+  1696     007E                     wtemp0	set	126
+  1697                           
+  1698                           	psect	idloc
+  1699                           
+  1700                           ;Config register IDLOC0 @ 0x2000
+  1701                           ;	unspecified, using default values
+  1702     2000                     	org	8192
+  1703     2000  3FFF               	dw	16383
+  1704                           
+  1705                           ;Config register IDLOC1 @ 0x2001
+  1706                           ;	unspecified, using default values
+  1707     2001                     	org	8193
+  1708     2001  3FFF               	dw	16383
+  1709                           
+  1710                           ;Config register IDLOC2 @ 0x2002
+  1711                           ;	unspecified, using default values
+  1712     2002                     	org	8194
+  1713     2002  3FFF               	dw	16383
+  1714                           
+  1715                           ;Config register IDLOC3 @ 0x2003
+  1716                           ;	unspecified, using default values
+  1717     2003                     	org	8195
+  1718     2003  3FFF               	dw	16383
+  1719                           
+  1720                           	psect	config
+  1721                           
+  1722                           ;Config register CONFIG1 @ 0x2007
+  1723                           ;	Oscillator Selection bits
+  1724                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
+      +                          unction on RA7/OSC1/CLKIN
+  1725                           ;	Watchdog Timer Enable bit
+  1726                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
+  1727                           ;	Power-up Timer Enable bit
+  1728                           ;	PWRTE = 0x1, unprogrammed default
+  1729                           ;	RE3/MCLR pin function select bit
+  1730                           ;	MCLRE = 0x1, unprogrammed default
+  1731                           ;	Code Protection bit
+  1732                           ;	CP = 0x1, unprogrammed default
+  1733                           ;	Data Code Protection bit
+  1734                           ;	CPD = 0x1, unprogrammed default
+  1735                           ;	Brown Out Reset Selection bits
+  1736                           ;	BOREN = 0x3, unprogrammed default
+  1737                           ;	Internal External Switchover bit
+  1738                           ;	IESO = 0x1, unprogrammed default
+  1739                           ;	Fail-Safe Clock Monitor Enabled bit
+  1740                           ;	FCMEN = 0x1, unprogrammed default
+  1741                           ;	Low Voltage Programming Enable bit
+  1742                           ;	LVP = 0x1, unprogrammed default
+  1743                           ;	In-Circuit Debugger Mode bit
+  1744                           ;	DEBUG = 0x1, unprogrammed default
+  1745     2007                     	org	8199
+  1746     2007  3FF4               	dw	16372
+  1747                           
+  1748                           ;Config register CONFIG2 @ 0x2008
+  1749                           ;	unspecified, using default values
+  1750                           ;	Brown-out Reset Selection bit
+  1751                           ;	BOR4V = 0x1, unprogrammed default
+  1752                           ;	Flash Program Memory Self Write Enable bits
+  1753                           ;	WRT = 0x3, unprogrammed default
+  1754     2008                     	org	8200
+  1755     2008  3FFF               	dw	16383
+
+Data Sizes:
+    Strings     9
+    Constant    0
+    Data        20
+    BSS         12
+    Persistent  6
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14     14      14
+    BANK0            80      7      45
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    grava_caractere@linhas	PTR unsigned char  size(1) Largest target is 8
+		 -> robo(BANK0[8]), 
+
+    escreve@str	PTR unsigned char  size(1) Largest target is 9
+		 -> STR_1(CODE[9]), 
+
+    lcd_init@lcd_pins.port_data	PTR volatile unsigned char  size(2) Largest target is 1
+		 -> PORTC(SFR0[1]), 
+
+    lcd_init@lcd_pins.port_en	PTR volatile unsigned char  size(2) Largest target is 1
+		 -> PORTD(SFR0[1]), 
+
+    lcd_init@lcd_pins.port_rs	PTR volatile unsigned char  size(2) Largest target is 1
+		 -> PORTC(SFR0[1]), 
+
+    lcd_init@lcd_pins	PTR struct . size(1) Largest target is 12
+		 -> lcd_pins(BANK0[12]), 
+
+    port_rs	PTR volatile unsigned char  size(2) Largest target is 1
+		 -> NULL(NULL[0]), PORTC(SFR0[1]), 
+
+    port_data	PTR volatile unsigned char  size(2) Largest target is 1
+		 -> NULL(NULL[0]), PORTC(SFR0[1]), 
+
+    port_en	PTR volatile unsigned char  size(2) Largest target is 1
+		 -> NULL(NULL[0]), PORTD(SFR0[1]), 
+
+    muda_pin@_port	PTR volatile unsigned char  size(2) Largest target is 1
+		 -> NULL(NULL[0]), PORTD(SFR0[1]), PORTC(SFR0[1]), 
+
+    S22$port_data	PTR volatile unsigned char  size(2) Largest target is 1
+		 -> PORTC(SFR0[1]), 
+
+    lcd_pins.port_data	PTR volatile unsigned char  size(2) Largest target is 1
+		 -> PORTC(SFR0[1]), 
+
+    S22$port_en	PTR volatile unsigned char  size(2) Largest target is 1
+		 -> PORTD(SFR0[1]), 
+
+    lcd_pins.port_en	PTR volatile unsigned char  size(2) Largest target is 1
+		 -> PORTD(SFR0[1]), 
+
+    S22$port_rs	PTR volatile unsigned char  size(2) Largest target is 1
+		 -> PORTC(SFR0[1]), 
+
+    lcd_pins.port_rs	PTR volatile unsigned char  size(2) Largest target is 1
+		 -> PORTC(SFR0[1]), 
+
+
+Critical Paths under _main in COMMON
+
+    _usa_caractere->_byte
+    _lcd_init->_byte
+    _grava_caractere->_byte
+    _escreve->_byte
+    _byte->_nibble
+    _nibble->_muda_pin
+    _enable->_muda_pin
+
+Critical Paths under _main in BANK0
+
+    _main->_grava_caractere
+    _usa_caractere->_byte
+    _lcd_init->_byte
+    _grava_caractere->_byte
+    _escreve->_byte
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0   35292
+                            _escreve
+                    _grava_caractere
+                           _lcd_init
+                      _usa_caractere
+ ---------------------------------------------------------------------------------
+ (1) _usa_caractere                                        3     1      2    8020
+                                              3 BANK0      3     1      2
+                               _byte
+ ---------------------------------------------------------------------------------
+ (1) _lcd_init                                             3     3      0   11587
+                                              3 BANK0      3     3      0
+                               _byte
+                             _enable
+                             _nibble
+ ---------------------------------------------------------------------------------
+ (1) _grava_caractere                                      5     4      1    7794
+                                              3 BANK0      4     3      1
+                               _byte
+ ---------------------------------------------------------------------------------
+ (1) _escreve                                              3     1      2    7891
+                                              3 BANK0      3     1      2
+                               _byte
+ ---------------------------------------------------------------------------------
+ (2) _byte                                                 6     3      3    7628
+                                             11 COMMON     3     0      3
+                                              0 BANK0      3     3      0
+                             _enable
+                           _muda_pin
+                             _nibble
+ ---------------------------------------------------------------------------------
+ (3) _nibble                                               4     2      2    2022
+                                              7 COMMON     4     2      2
+                           _muda_pin
+ ---------------------------------------------------------------------------------
+ (3) _enable                                               2     2      0    1706
+                                              7 COMMON     2     2      0
+                           _muda_pin
+ ---------------------------------------------------------------------------------
+ (4) _muda_pin                                             7     1      6    1706
+                                              0 COMMON     7     1      6
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 4
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _escreve
+     _byte
+       _enable
+         _muda_pin
+       _muda_pin
+       _nibble
+         _muda_pin
+   _grava_caractere
+     _byte
+   _lcd_init
+     _byte
+     _enable
+     _nibble
+   _usa_caractere
+     _byte
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BANK3               60      0       0       9        0.0%
+BITBANK3            60      0       0       8        0.0%
+SFR3                 0      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+BANK2               60      0       0      11        0.0%
+BITBANK2            60      0       0      10        0.0%
+SFR2                 0      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK1            50      0       0       6        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               50      7      2D       5       56.2%
+BITBANK0            50      0       0       4        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               E      E       E       1      100.0%
+BITCOMMON            E      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0      3B      12        0.0%
+ABS                  0      0      3B       3        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA             100      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.41 build 20230208172133 
+Symbol Table                                                                                   Fri Apr 21 22:23:37 2023
+
+                      pc 0002                       _D4 003A                       _D5 0038  
+                     _D6 0036                       _D7 0034                       l25 0639  
+                     l26 0639                       l53 0560                       l62 0681  
+                     l56 05C2                       l65 07E1                       l59 073A  
+                     l91 05F9                       l76 06C7                       _EN 003C  
+                     l95 0580                       l96 058D                       _RS 003E  
+                     fsr 0004                      l800 063D                      l810 07AE  
+                    l802 073E                      l820 0685                      l812 07B8  
+                    l804 0795                      l830 06B9                      l822 068A  
+                    l814 07C2                      l806 07A0                      l824 0696  
+                    l840 05D1                      l832 05C3                      l816 07CC  
+                    l808 07A9                      l826 06A2                      l842 05E4  
+                    l834 05CD                      l818 07D6                      l850 0575  
+                    l828 06B3                      l844 05EC                      l860 0622  
+                    l852 05FA                      l790 054D                      l846 0564  
+                    l862 062D                      l854 0606                      l792 058E  
+                    l848 0569                      l856 060C                      l786 0534  
+                    l794 05A1                      l858 0618                      l788 053A  
+                    l796 05A9                      l798 06C8                      u110 053A  
+                    u111 0539                      u124 0540                      u125 053E  
+                    u134 0553                      u150 068A                      u135 0551  
+                    u151 0689                      u160 06C7                      u145 0657  
+                    u161 06C6                      u217 079B                      u170 05F9  
+                    u171 05F8                      u227 07DC                      u180 0569  
+                    u237 05A5                      u181 0568                      u247 05BD  
+                    u175 05F5                      fsr0 0004                      indf 0000  
+         ?_usa_caractere 0043                     STR_1 0009                     _main 05FA  
+                   _byte 063D                     _robo 002C                     btemp 007E  
+                   start 0000                    ?_main 0070                    ?_byte 007B  
+                  _PORTC 0007                    _PORTD 0008                    _TRISC 0087  
+                  _TRISD 0088          __end_of_escreve 06C8                    pclath 000A  
+     grava_caractere@pos 0070                    status 0003                    wtemp0 007E  
+            byte@escreve 007B          __initialization 07E2             __end_of_main 063D  
+           __end_of_byte 0682                   ??_main 007E                   ??_byte 0040  
+        ??_usa_caractere 007E         __end_of_lcd_init 07E2                   _enable 058E  
+                 _nibble 06C8         __end_of_muda_pin 0561                ??_escreve 007E  
+__end_of__initialization 07FC           __pcstackCOMMON 0070             __pidataBANK0 0520  
+             __pbssBANK0 0034   usa_caractere@caractere 0044               __pmaintext 05FA  
+                ?_enable 0070                  ?_nibble 0077                ?_lcd_init 0070  
+             __stringtab 0003                ?_muda_pin 0070        ??_grava_caractere 0044  
+          muda_pin@_port 0070                  __ptext1 0561                  __ptext2 073B  
+                __ptext3 05C3                  __ptext4 0682                  __ptext5 063D  
+                __ptext6 06C8                  __ptext7 058E                  __ptext8 0534  
+                _escreve 0682                  _port_en 0049                  _port_rs 004B  
+             ??_lcd_init 0043     end_of_initialization 07FC               ??_muda_pin 0076  
+  __end_of_usa_caractere 058E           __end_of_enable 05C3           __end_of_nibble 073B  
+             escreve@col 0043               escreve@lin 0045               escreve@str 0044  
+    start_initialization 07E2               nibble@dado 0077               init_fetch0 050D  
+               ??_enable 0077              __pdataBANK0 0020                 ??_nibble 0079  
+              ___latbits 0002            __pcstackBANK0 0040          _grava_caractere 05C3  
+              __pnvBANK0 0047                __pstrings 0003                 ?_escreve 0043  
+           muda_pin@_pin 0072             muda_pin@_val 0074                _port_data 0047  
+            __stringbase 0008  __end_of_grava_caractere 05FA         grava_caractere@i 0045  
+       usa_caractere@col 0043         usa_caractere@lin 0045       __end_of__stringtab 0009  
+               _lcd_init 073B                 _lcd_pins 0020                 _muda_pin 0534  
+       lcd_init@lcd_pins 0045                 byte@dado 007D                 init_ram0 0511  
+       ?_grava_caractere 0043    grava_caractere@linhas 0043                stringcode 0003  
+               stringdir 0003                 stringtab 0003            _usa_caractere 0561  
